@@ -1,0 +1,1589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Validated using 
+  http://validator.w3.org/
+  http://jigsaw.w3.org/css-validator/
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Prolog Functions - Tomasz Mozolewski - Home Page 2002</title>
+	<link href="default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="default.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Tomasz Mozolewski" />
+	<meta name="keywords" content="tomasz mozolewski,java,java reference" />
+	<meta name="description" content="Prolog Functions - Tomasz Mozolewski's home page - created in 2002" />
+	<base target="_blank" />
+
+</head>
+<body>
+<h1 align="center"><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst02.htm#ToC_363">Quick
+  Reference of Prolog Predicates and Operators</a></h1>
+        
+<h2 align="center"
+ style="margin-right: 0.1in; margin-left: 0.1in; text-align: center;"><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst435.htm#HDRINDEX_START">Index</a></h2>
+        
+<div align="center">     
+<table border="1" cellspacing="5" cellpadding="5" width="100%"
+ style="width: 78.74%; margin-left: 8.7pt;">
+     <tbody style="text-align: left">
+       <tr>
+      <td>                        
+      Predicate/<br>
+      Operator
+      </td>
+      <td
+ style="padding: 0.75pt; width: 68.44%;">                        
+      Description 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst359.htm#HDRPRLGPRED630831">\==</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Term inequality  operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst362.htm#HDRPRLGPRED630495">=</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Term unification operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst364.htm#HDRPRLGPRED630614">=?</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Expression evaluation 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst367.htm#HDRPRLGPRED630711">==</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Term equality operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst401.htm#HDRPRLGPRED630951">not</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Term negation predicate 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst374.htm#HDRPRLGPRED951316">atom</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is of type atom.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst375.htm#HDRPRLGPRED951990">atomic</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is of type atomic.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst388.htm#HDRPRLGPRED951151">ground</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is instantiated.        
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst390.htm#HDRPRLGPRED951450">integer</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is of type integer.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst394.htm#HDRPRLGPRED952124">is_list</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is a list.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst402.htm#HDRPRLGPRED951856">number</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is of type number.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst403.htm#HDRPRLGPRED951718">pointer</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is of type pointer.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst411.htm#HDRPRLGPRED951584">real
+    (test real type)</a> 
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a variable is of type real.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst424.htm#HDRPRLGPRED952262">term_type</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Gets the type of a variable. 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst372.htm#HDRPRLGPRED569475">ascii</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Converts between an ASCII character and ASCII   code. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst392.htm#HDRPRLGPRED569778">inttoatom</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Converts between an integer and an atom    representation of an integer.
+      
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst405.htm#HDRPRLGPRED590641">pointertoatom</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Converts between a pointer and an atom    representation of a pointer. 
+      
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst406.htm#HDRPRLGPRED570034">pointertoint</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Converts between a pointer and an integer    representation of a 
+pointer. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst410.htm#HDRPRLGPRED784440">real
+    (convert integer)</a> 
+      </td>
+      <td
+ headers="2">                   
+    
+      Converts integer type to real type.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst412.htm#HDRPRLGPRED569908">realtoatom</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Converts between  a real number and an atom representation 
+of a   real number.
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst355.htm#HDRPRLGPRED633840">@&lt;</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a term alphabetically precedes   another. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst356.htm#HDRPRLGPRED634045">@=&lt;</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a term is alphabetically  equal or   precedes another. 
+      
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst357.htm#HDRPRLGPRED633940">@&gt;</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a term alphabetically follows   another. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst358.htm#HDRPRLGPRED634145">@&gt;=</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Tests whether a term is alphabetically  equal or   follows another. 
+      
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst389.htm#HDRPRLGPRED657924">int_to_hex</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Hexadecimal string representation of  an integer 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst420.htm#HDRPRLGPRED658033">strip</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Remove characters from an atom 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst422.htm#HDRPRLGPRED658323">substring</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Get a substring from a string 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst376.htm#HDRPRLGPRED1039571">atomlength</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Determine the length of an atom 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst378.htm#HDRPRLGPRED1039755">atomconcat</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Concatenate atoms 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst377.htm#HDRPRLGPRED1040035">atompart</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Get a substring from an atom 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst396.htm#HDRPRLGPRED1040355">lowertoupper</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Convert between lowercase and uppercase  letters   in an atom 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst419.htm#HDRPRLGPRED1040527">sprintf</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Print formatted data to an atom 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst371.htm#HDRPRLGPRED1034620">append</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Append elements to a list 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst379.htm#HDRPRLGPRED1034309">atomtolist</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Convert between the atomic type and a list of   characters 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst382.htm#HDRPRLGPRED1034770">delete</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Delete elements from a list 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst383.htm#HDRPRLGPRED1035924">disjoint</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Compare elements in two lists for uncommon    values 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst384.htm#HDRPRLGPRED1035343">empty_list</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Test if a list  is empty 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst391.htm#HDRPRLGPRED1036056">intersect</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Compare elements in lists for common  values 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst395.htm#HDRPRLGPRED1035487">length</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Get the length of a list 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst397.htm#HDRPRLGPRED1035765">member</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Check a list for a value 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst398.htm#HDRPRLGPRED1034465">name</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Convert between the atomic type and a list of   character codes 
+     
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst399.htm#HDRPRLGPRED1034924">nmember</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Check a list for a single value at an  index 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst400.htm#HDRPRLGPRED1035075">nmembers</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Check a list for multiple values at indexes 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst414.htm#HDRPRLGPRED1035218">remove_dups</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Remove duplicate  elements from a list 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst417.htm#HDRPRLGPRED1035619">rremove</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Remove the first element from a list        
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst418.htm#HDRPRLGPRED1036698">sort</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Sort the elements of a list alphabetically        
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst421.htm#HDRPRLGPRED1036271">subset</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Test whether a list is a subset of another  list 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst423.htm#HDRPRLGPRED1036395">subtract</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Remove elements that are common to two  lists 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst425.htm#HDRPRLGPRED1036551">union</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Add uncommon elements between two lists        
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst393.htm#HDRPRLGPRED782594">is</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Mathematical unification 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst361.htm#HDRPRLGPRED782870">&lt;</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Mathematical less than 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst363.htm#HDRPRLGPRED783362">=:=</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Mathematical equal to 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst365.htm#HDRPRLGPRED783239">=\=</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Mathematical not equal to 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst366.htm#HDRPRLGPRED783116">=&lt;</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Mathematical less than or equal to 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst368.htm#HDRPRLGPRED782747">&gt;</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Mathematical greater than 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst369.htm#HDRPRLGPRED782993">&gt;=</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Mathematical greater than or equal to
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst347.htm#HDRPRLGPRED1098758">+</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Addition operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst350.htm#HDRPRLGPRED1098632">-
+    (sign reversal)</a> 
+      </td>
+      <td
+ headers="2">                   
+    
+      Unary negation  operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst351.htm#HDRPRLGPRED1098906">-
+    (subtraction)</a> 
+      </td>
+      <td
+ headers="2">                   
+    
+      Subtraction operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst352.htm#HDRPRLGPRED1099054">*</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Multiplication operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst353.htm#HDRPRLGPRED1099202">/</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Real division operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst354.htm#HDRPRLGPRED1099350">//</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Integer division  operator 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst348.htm#HDRPRLGPRED1112747">-
+    (pointer offset subtraction)</a> 
+      </td>
+      <td
+ headers="2">                   
+    
+      Pointer offset subtraction operator.        
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst349.htm#HDRPRLGPRED1112932">-
+    (pointer subtraction)</a> 
+      </td>
+      <td
+ headers="2">                   
+    
+      Pointer subtraction operator. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst360.htm#HDRPRLGPRED1112567">+
+    (pointer offset addition)</a> 
+      </td>
+      <td
+ headers="2">                   
+    
+      Pointer offset addition operator. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst404.htm#HDRPRLGPRED1112360">pointeroffset</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Get the difference between two pointer  values. 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst416.htm#HDRPRLGPRED784317">round</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Round a real number to the closest integer.
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst370.htm#HDRPRLGPRED797005">abolish</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Remove all clauses from the knowledge  base. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst373.htm#HDRPRLGPRED785335">assert</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Add a clause to the knowledge base.       
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst380.htm#HDRPRLGPRED786645">compile</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Compile a Prolog source file. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst381.htm#HDRPRLGPRED786815">consult</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Load a compiled Prolog file into the  knowledge   base. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst386.htm#HDRPRLGPRED786475">flisting</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Write predicates to an open file. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst413.htm#HDRPRLGPRED786985">reconsult</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Reload a compiled Prolog file into the  knowledge   base. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst415.htm#HDRPRLGPRED796892">retract</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Remove a specific clause from the knowledge    base. 
+      </td>
+     </tr>
+     <tr>
+      <td
+>                        
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst385.htm#HDRPRLGPRED787155">fclose</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Close an open file. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst387.htm#HDRPRLGPRED785560">fopen</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Open a file. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst407.htm#HDRPRLGPRED787835">printf</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Write formatted output to a file. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst408.htm#HDRPRLGPRED787325">read</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Read a Prolog term from an open Prolog  source   file. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst409.htm#HDRPRLGPRED787495">readln</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Read a line from an open file. 
+      </td>
+     </tr>
+     <tr>
+      <td
+  headers="1">                   
+    
+      <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst426.htm#HDRPRLGPRED787665">write</a>
+    
+      </td>
+      <td
+ headers="2">                   
+    
+      Write to an open file. 
+      </td>
+     </tr>
+             
+  </tbody>   
+</table>
+     </div>
+        
+
+        <br clear="all" style="page-break-before: auto;">
+         
+<div class="Section2">     
+<div align="center">     
+<table border="0" cellspacing="5" cellpadding="5">
+     <tbody style="text-align: left">
+       <tr>
+      <td 
+ rowspan="2" colspan="1">      
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+           
+      ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst319.htm#Header_353">Prolog
+    Predicate Online Information</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst320.htm#Header_354">Language
+    Basics</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst321.htm#Header_355">Terms</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst322.htm#Header_356">Facts</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst323.htm#Header_357">Rules</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst324.htm#Header_358">The
+    Knowledge Base</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst325.htm#Header_359">Comments</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst326.htm#Header_360">Data
+    Types and Ranges</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst327.htm#Header_361">Data
+    Type Mapping between BAROC and Prolog</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst328.htm#HDRPRLGPRED929841">An
+    Example of Using Prolog in a Tivoli Enterprise Console Rule</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst329.htm#Header_363">Quick
+    Reference of Prolog Predicates and Operators</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst330.htm#Header_364">Instantiation
+    and Unification</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst331.htm#Header_365">Test
+    Data Type and Variable Instantiation</a> <br>
+       
+      </td>
+      <td 
+>      
+                                                                        
+                                                                        
+                                                                        
+                                                              
+      ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst332.htm#Header_366">Convert
+    Data Types</a><br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst333.htm#Header_367">Atom
+    Manipulation</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst334.htm#Header_368">Standard
+    Order Comparison</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst335.htm#HDRPRLGPRED997380">Functions</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst336.htm#Header_370">Miscellaneous</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst337.htm#Header_371">List
+    Manipulation</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst338.htm#Header_372">Mathematical
+    Expressions</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst339.htm#Header_373">Expression
+    Evaluation</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst340.htm#Header_374">Arithmetic
+    Comparison</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst341.htm#Header_375">Mathematical
+    Operators</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst342.htm#Header_376">Pointer
+    Arithmetic</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst343.htm#Header_377">Miscellaneous</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst344.htm#Header_378">Knowledge
+    Base</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst345.htm#Header_379">I/O</a>
+    
+      </td>
+     </tr>
+       <tr>
+           <td>
+      
+      </td>
+     </tr>
+             
+  </tbody>   
+</table>
+     </div>
+     </div>
+     <br clear="all" style="page-break-before: auto;">
+         
+<div class="Section3"> 
+<h2>    </h2>
+ 
+<h2 align="center"><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst346.htm#Header_380">Alphabetic
+  Listing of Built-In Predicates and Operators</a></h2>
+        
+<div align="center">     
+<table border="0" cellspacing="5" cellpadding="5">
+     <tbody style="text-align: left">
+       <tr>
+      <td 
+>      
+      ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst347.htm#HDRPRLGPRED1098758">+</a> 
+      <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst348.htm#HDRPRLGPRED1112747">-
+    (pointer offset subtraction)</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst349.htm#HDRPRLGPRED1112932">-
+    (pointer subtraction)</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst350.htm#HDRPRLGPRED1098632">-
+    (sign reversal)</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst351.htm#HDRPRLGPRED1098906">-
+    (subtraction)</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst352.htm#HDRPRLGPRED1099054">*</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst353.htm#HDRPRLGPRED1099202">/
+    </a><br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst354.htm#HDRPRLGPRED1099350">//</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst355.htm#HDRPRLGPRED633840">@&lt;</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst356.htm#HDRPRLGPRED634045">@=&lt;</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst357.htm#HDRPRLGPRED633940">@&gt;</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst358.htm#HDRPRLGPRED634145">@&gt;=</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst359.htm#HDRPRLGPRED630831">\==</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst360.htm#HDRPRLGPRED1112567">+
+    (pointer offset addition)</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst361.htm#HDRPRLGPRED782870">&lt;</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst362.htm#HDRPRLGPRED630495">=</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst363.htm#HDRPRLGPRED783362">=:=</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst364.htm#HDRPRLGPRED630614">=?</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst365.htm#HDRPRLGPRED783239">=\=</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst366.htm#HDRPRLGPRED783116">=&lt;</a>
+    
+      </td>
+      <td>      
+     
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst367.htm#HDRPRLGPRED630711">==</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst368.htm#HDRPRLGPRED782747">&gt;</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst369.htm#HDRPRLGPRED782993">&gt;=</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst370.htm#HDRPRLGPRED797005">abolish</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst371.htm#HDRPRLGPRED1034620">append</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst372.htm#HDRPRLGPRED569475">ascii</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst373.htm#HDRPRLGPRED785335">assert</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst374.htm#HDRPRLGPRED951316">atom</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst375.htm#HDRPRLGPRED951990">atomic</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst376.htm#HDRPRLGPRED1039571">atomlength</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst377.htm#HDRPRLGPRED1040035">atompart</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst378.htm#HDRPRLGPRED1039755">atomconcat</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst379.htm#HDRPRLGPRED1034309">atomtolist</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst380.htm#HDRPRLGPRED786645">compile</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst381.htm#HDRPRLGPRED786815">consult</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst382.htm#HDRPRLGPRED1034770">delete</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst383.htm#HDRPRLGPRED1035924">disjoint</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst384.htm#HDRPRLGPRED1035343">empty_list</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst385.htm#HDRPRLGPRED787155">fclose</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst386.htm#HDRPRLGPRED786475">flisting</a>
+    
+      </td>
+      <td>      
+     
+      ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst387.htm#HDRPRLGPRED785560">fopen</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst388.htm#HDRPRLGPRED951151">ground</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst389.htm#HDRPRLGPRED657924">int_to_hex</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst390.htm#HDRPRLGPRED951450">integer</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst391.htm#HDRPRLGPRED1036056">intersect</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst392.htm#HDRPRLGPRED569778">inttoatom</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst393.htm#HDRPRLGPRED782594">is</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst394.htm#HDRPRLGPRED952124">is_list</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst395.htm#HDRPRLGPRED1035487">length</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst396.htm#HDRPRLGPRED1040355">lowertoupper</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst397.htm#HDRPRLGPRED1035765">member</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst398.htm#HDRPRLGPRED1034465">name</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst399.htm#HDRPRLGPRED1034924">nmember</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst400.htm#HDRPRLGPRED1035075">nmembers</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst401.htm#HDRPRLGPRED630951">not</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst402.htm#HDRPRLGPRED951856">number</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst403.htm#HDRPRLGPRED951718">pointer</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst404.htm#HDRPRLGPRED1112360">pointeroffset</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst405.htm#HDRPRLGPRED590641">pointertoatom</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst406.htm#HDRPRLGPRED570034">pointertoint</a>
+    
+      </td>
+      <td>      
+     
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst407.htm#HDRPRLGPRED787835">printf</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst408.htm#HDRPRLGPRED787325">read</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst409.htm#HDRPRLGPRED787495">readln</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst410.htm#HDRPRLGPRED784440">real
+    (convert integer)</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst411.htm#HDRPRLGPRED951584">real
+    (test real type)</a> <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst412.htm#HDRPRLGPRED569908">realtoatom</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst413.htm#HDRPRLGPRED786985">reconsult</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst414.htm#HDRPRLGPRED1035218">remove_dups</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst415.htm#HDRPRLGPRED796892">retract</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst416.htm#HDRPRLGPRED784317">round</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst417.htm#HDRPRLGPRED1035619">rremove</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst418.htm#HDRPRLGPRED1036698">sort</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst419.htm#HDRPRLGPRED1040527">sprintf</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst420.htm#HDRPRLGPRED658033">strip</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst421.htm#HDRPRLGPRED1036271">subset</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst422.htm#HDRPRLGPRED658323">substring</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst423.htm#HDRPRLGPRED1036395">subtract</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst424.htm#HDRPRLGPRED952262">term_type</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst425.htm#HDRPRLGPRED1036551">union</a>
+    <br>
+ ·  <a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst426.htm#HDRPRLGPRED787665">write</a>
+    
+      </td>
+     </tr>
+     
+  </tbody>   
+</table>
+     </div>
+        
+<div style="text-align: center">
+<table border="0" cellspacing="5" cellpadding="5"><tbody style="text-align: left"><tr><td>
+<ul>
+<li><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst427.htm#HDRPRLGPRED1259722">Making
+  Your Predicates and Facts Available to the Tivoli Enterprise Console Rule
+  Engine</a> 
+</li>
+        
+<li><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst428.htm#HDRPRLGPRED1359262">Loading
+  Predicates and Facts from a File</a> 
+</li>
+        
+<li><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst429.htm#HDRCCHCEEDG">Using
+  the assert Predicate with a TEC_Start Event</a> 
+</li>
+        
+<li><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst430.htm#HDRPRLGPRED1360926">Using
+  the Prolog Interpreter</a> 
+</li>
+        
+<li><a
+ href="http://www.tivoli.com/support/public/Prodman/public_manuals/td/tec/GC32-0669-01/en_US/HTML/RBGmst431.htm#Header_466">An
+  Example of Using the Prolog Interpreter</a> 
+</li>
+</ul>
+</td></tr></tbody></table>
+</div>
+
+	<script type="text/javascript">
+	<!--
+		PageInfo()
+	//-->
+	</script>
+</body>             
+</html>
+

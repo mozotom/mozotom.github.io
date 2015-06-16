@@ -1,0 +1,30 @@
+/* Copyright @2013 Tomasz Mozolewski */
+
+table {
+  table-layout: fixed;
+}
+
+table, tr, td {
+  border-collapse: collapse; 
+  border-style: solid; 
+  border-color: black; 
+  border-width: 1px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.attrs {
+  width: 200px;
+  font-weight: bold;
+}
+
+.results {
+  width: 400px;
+}
+
+#skipPattern {
+  width: 450px;
+}
+

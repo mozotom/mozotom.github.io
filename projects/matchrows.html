@@ -1,0 +1,238 @@
+<html>
+
+<header>
+<title>Row matching - Copyright by Tomasz Mozolewski @2007</title>
+
+<script type="text/javascript">
+
+var validChars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 "
+
+var dataset
+var dataset2
+var top = 25
+
+var hex='0123456789abcdef'
+function dec2hex(d, n) {
+  var h = ""
+  while ((d>0) || (n>0)) {
+    h=hex.substr(d&15,1)+h
+    d>>=4
+    n--
+  }
+  return h
+}
+
+function min(a, b) {
+  if (a<b) return a ; else return b;
+}
+
+function readdata() {
+  status = "Reading data..."
+  rowdata = document.getElementById('data').innerText
+  dataset = rowdata.split("\r\n")
+  dataset2 = Array(dataset.length)
+  for (i=0; i<dataset.length; ++i) {
+    dataset2[i] = dataset[i].toLowerCase()
+    dataset[i] = dataset[i].split('	')
+  }
+
+  dataheader = dataset.shift()
+  dataset2.shift()
+  datastatus.innerText = "Read " + dataset.length + " rows of data"
+  status = "Done."
+  document.getElementById('reader').value = 'Read data'
+  document.getElementById('reader').disabled = false
+  document.getElementById('go').disabled = false
+}
+
+function highlightText(text, highlight) {
+  var x=Array(text.length)
+  var t=text.toLowerCase()
+  var i, j, jj, k
+  for (i=0; i<text.length; ++i) x[i] = 0
+
+  for (i=0; i<highlight.length; ++i) {
+    j=t.indexOf(highlight[i])
+    while (j>=0) {
+      for (k=0; k<highlight[i].length; ++k) x[j+k] = 1
+      jj=t.substring(j+1, t.length).indexOf(highlight[i])
+      if (jj>=0) j += jj + 1 ; else j = jj
+    }
+  }
+
+  var h = 0
+  var result = ""
+
+  for (i=0; i<x.length; ++i) {
+    if (x[i] != h) {
+      h = x[i]
+      if (h == 1) {
+        result += '<b style="color: white; background: red">'
+      } else {
+      	result += '</b>'
+      }
+    }
+    result += text.substr(i,1)
+  }
+
+  if (h == 1) result += '</font>'
+
+  return result
+}
+
+function showdata(roworder, top, highlight) {
+  var result=""
+  result += "<table border=\"1\" cellspacing=\"0\">"
+
+  result += "<tr bgcolor=\"black\" style=\"color:#ffffff\">"
+
+  for (j=0; j<dataheader.length; ++j) {
+    result += "<th>" + dataheader[j] + "</th>"
+  }
+  result += "</tr>"
+
+  for (i=0; i<min(top, roworder.length); ++i) {
+    if (roworder[i][1] == 0) break
+    result += "<tr bgcolor=\"#ffff" + dec2hex(255 - Math.round(roworder[i][1] * 255 / roworder[0][1]), 2) + "\">"
+    for (j=0; j<dataset[roworder[i][0]].length; ++j) {
+      result += "<td>" + highlightText(dataset[roworder[i][0]][j], highlight) + "</td>"
+    }
+    result += "</tr>"
+  }
+
+  result += "</table>"
+
+  if (i<roworder.length) {
+    if (roworder[i][1] != 0) {
+      j = i
+      for (i=i; i<roworder.length; ++i) if (roworder[i][1] == 0) break
+
+      result += "And " + (i - j) + " more match(es) not displayed..."
+    } else {
+      result += "" + i + " matched row(s) displayed."
+    }
+  } else {
+    result += "All " + roworder.length + " row(s) matched."
+  }
+
+  return result
+}
+
+function sortScores(a, b) {
+  if (a[1] < b[1]) return 1
+  if (a[1] > b[1]) return -1
+  return 0;
+}
+
+function cleanQuery(str) {
+  var i, p
+
+  for (i=0; i<str.length; ++i) {
+    if (validChars.indexOf(str.substr(i, 1)) < 0) {
+      str = str.replace(str.substr(i, 1), ' ')
+    }
+  }
+  return(str)
+}
+
+function matchdata() {
+  status = "Matching..."
+  matchVal = cleanQuery(document.getElementById('query').value)
+  matchstrX = matchVal.split(' ')
+  matchstr = Array()
+  for (i=0; i<matchstrX.length; ++i) {
+    if (matchstrX[i].length > 1) matchstr.push(matchstrX[i].toLowerCase())
+  }
+
+  matchCount = Array(matchstr.length)
+  for (j=0; j<matchstr.length; ++j) matchCount[j] = 0
+
+  roworder=Array(dataset2.length)
+  for (i=0; i<dataset2.length; ++i) {
+    roworder[i] = Array(i, Array(matchstr.length))
+    for (j=0; j<matchstr.length; ++j) roworder[i][1][j] = 0
+
+    for (j=0; j<matchstr.length; ++j) {
+      if (dataset2[i].indexOf(matchstr[j]) >= 0) {
+        roworder[i][1][j] += matchstr[j].length / dataset2[i].length
+        matchCount[j] += 1
+      } else {
+        roworder[i][1][j] = 0
+      }
+    }
+  }
+
+  status = "Scoring..."
+  for (i=0; i<dataset2.length; ++i) {
+    s = 0
+    for (j=0; j<matchstr.length; ++j) {
+      if (matchCount[j] > 0) {
+        s += roworder[i][1][j] / matchCount[j]
+      } 
+    }
+    roworder[i][1] = s
+  }
+
+  matchBitScore = Array(matchstr.length)
+  for (j=0; j<matchstr.length; ++j) {
+      matchBitScore[j] = Array(matchstr[j], matchCount[j])
+  }
+  matchBitScore = matchBitScore.sort(sortScores)
+
+  matchBitsText = ""
+  for (j=0; j<matchBitScore.length; ++j) {
+      if (matchBitsText.length > 0) matchBitsText += ", "
+      if (matchBitScore[j][1] == 0) matchBitsText += '<font color="red">'
+      matchBitsText += matchBitScore[j][0] + ' (' + matchBitScore[j][1] + ')'
+      if (matchBitScore[j][1] == 0) matchBitsText += '</font>'
+  }
+  document.getElementById('matchBits').innerHTML = matchBitsText
+  
+  status = "Sorting..."
+  roworder = roworder.sort(sortScores)
+  status = "Displaying data..."
+
+  document.getElementById('output').innerHTML = showdata(roworder, top, matchstr)
+  document.getElementById('go').value = 'Match Data'
+  document.getElementById('go').disabled = false
+  status = "Done."
+}
+
+</script>
+</header>
+
+<body onload="">
+<form onsubmit="document.getElementById('go').disabled = true ; document.getElementById('go').value = 'Working...' ; setTimeout('matchdata()', 10) ; return false">
+  Enter your query here:<br />
+  <textarea id="query" cols="80" rows="5"></textarea><br/>
+  <input id="go" type="submit" value="Match Data" disabled="true"></input>
+  <i id="matchBits"></i>
+</form>
+<div id="output"></div><hr />
+
+Copy / paste your excel spreadsheet here and click "Read data":<br />
+<textarea id="data" cols="80" rows="5">
+</textarea><br/>
+
+<div id="datastatus"></div>
+<button id="reader" onclick="document.getElementById('reader').value = 'Reading data...' ; document.getElementById('reader').disabled = true ; setTimeout('readdata()', 10)">Read data</button>
+
+<hr />
+<h2>Instructions</h2>
+<ol>
+  <li>Copy / paste table from excel spreadsheet (first row contains column headings)</li>
+  <li>Press "Read data" button.</li>
+  <li>Enter you query - any character other than letter or digit is treated as separator</li>
+  <li>Press "Match Data" button</li>
+  <li>Review results</li>
+  <li>You can modify query and search again, or read new data</li>
+</ol>
+<h2>Limitations</h2>
+<ul>
+  <li>Matching is case insensetive</li>
+  <li>Only letters and numbers are matched - all other characters are discarded</li>
+  <li>Single characters are discared from search - search terms must be at least 2 characters long</li>
+  <li>Top 25 matches are displayed</li>
+</ul>
+</body>
+</html>

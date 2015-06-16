@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Sudoku helper by Tomasz Mozolewski @2010</title>
+        <link href="sudoku.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="sudoku.js"></script>
+    </head>
+    <body onload="genBoard(); flipHelper()">
+        <table class="m"><tr><td class="title">
+            Sudoku helper by Tomasz Mozolewski @2010
+        </td></tr><tr><td id="board">
+        </td></tr><tr><td id="helpboard">
+        </td></tr><tr><td id="buttons">                
+            <input type="button" value="Solve" onclick="if (confirm('Do you really want to see solution?')) solve()"></input>
+            <input id="helperButton" type="button" value="" onclick="flipHelper()"></input>
+            <input type="button" value="Clear" onclick="if (confirm('Do you really want to clear the board?')) clearBoard()"></input>
+            <input id="trivialButton" type="button" value="Trivial" onclick="solveTrivial()"></input>
+            <input id="saveButton" type="button" value="Save" onclick="saveBoard()"></input>
+            <input id="loadButton" type="button" value="Load" onclick="loadBoard()"></input>
+        </td></tr><tr><td id="statusBar">                
+        </td></tr><tr><td>
+            <textarea id="storage" class="storage" rows="9" cols="9" />                
+        </td></tr></table>         
+    </body>
+</html>

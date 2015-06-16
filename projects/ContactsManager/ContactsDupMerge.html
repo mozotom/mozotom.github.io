@@ -1,0 +1,60 @@
+<!-- Copyright @2013 Tomasz Mozolewski -->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="ContactsDupMerge.css">
+  <script type="text/javascript" src="ContactsDupMerge.js"></script>
+</head>
+<body onload="init()">
+  <table>
+    <tr>
+      <th>Input</th>
+      <th>Output</th></tr>
+    <tr>
+      <td><textarea name="invcf" id="invcf" rows="4" cols="40"></textarea></td>
+      <td><textarea name="outvcf" id="outvcf" rows="4" cols="40"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="checkbox" name="xAttr" id="xAttr" checked="checked" />Remove non standard attributes<br />
+        <input type="checkbox" name="attrPRODID" id="attrPRODID" checked="checked" />Remove PRODID attribute<br />
+        <input type="checkbox" name="attrREV" id="attrREV" checked="checked" />Remove REV attribute<br />
+        Skip lines with patterns (egrep): <input type="text" name="skipPattern" id="skipPattern" value="^TEL;.*FAX|^LABEL;WORK;PREF;ENCODING=QUOTED-PRINTABLE.*BUILDING/FLOOR/ZONE|Yahoo! AddressBook|^UID"></input>
+      </td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="2">
+        <button onclick="loadData()" accesskey="L"><u>L</u>oad Data</button>
+        <button onclick="dupMerge()" accesskey="M"><u>M</u>erge</button>
+        <button onclick="genResult()" accesskey="G"><u>G</u>enenrate Result</button>
+      </td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="2"><div id="status"></div></td>
+    </tr>
+  </table>
+  
+  <hr />
+  
+  <table id="compvcf">
+    <tr id="header">
+      <th>Attribute</th>
+      <th onclick="copyMerge('cLeft')" id="leftHeader">Left</th>
+      <th onclick="showMerge(curLeft, curRight)" id="resultHeader">Result</th>
+      <th onclick="copyMerge('cRight')" id="rightHeader">Right</th>
+    </tr>
+    <tr id="checkboxes" class="buttons">
+      <th>Keep</th>
+      <td><input type="checkbox" id="leftKeepvcf" /></td>
+      <td><input type="checkbox" id="resultKeepvcf" checked="checked" /></td>
+      <td><input type="checkbox" id="rightKeepvcf" /></td>
+    </tr>
+    <tr id="buttons">
+      <td class="buttons" colspan="4">
+        <button type="button" name="Ignore" onclick="showNextMerge()" accesskey="I"><u>I</u>gnore and Find Next</button>
+        <button type="button" name="FindNext" onclick="saveNext()" accesskey="S"><u>S</u>ave and Find Next</button>
+      </td>
+    </tr>
+   </table>
+   
+</body>
+</html>

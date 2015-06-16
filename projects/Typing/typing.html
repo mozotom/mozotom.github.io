@@ -1,0 +1,46 @@
+<html>
+<head>
+  <script type="text/javascript" src="words.js"></script>
+  <script type="text/javascript" src="typing.js"></script>
+  <link rel="stylesheet" type="text/css" href="typing.css" />
+</head>
+<body onload="loadName(); loadResults(); startTyping()">
+  <table><tr>
+  <td>Name: <input id="name" onchange="saveName()"></input></td>
+  <td>Lesson: <select id="lesson" onchange="loadWords()">
+    <option value="asdfjkl;">Home Row Basic</option>
+    <option value="asdfghjkl;">Home Row All</option>
+    <option value="qweruiop">Top Row Basic</option>
+    <option value="qwertyuiop">Top Row All</option>
+    <option value="zxcvm,./">Bottom Row Basic</option>
+    <option value="zxcvbnm,./">Bottom Row All</option>
+    <option value="qwertyuiopasdfghjkl;zxcvbnm,./">All letters lowercase</option>
+    <!--
+    <option value="">All letters mixed case</option>
+    <option value="">Numbers</option>
+    <option value="">Symbols</option>
+    <option value="">Everything</option>
+    <option value="">Random text</option>
+    -->
+  </select>
+  </td>
+  <td>
+    <input type="Button" onclick="startTyping()" value="START" />
+  </td>
+  <td><div id="time" class="info"></div></td>
+  <td><div id="wpm" class="info"></div></td>
+  </tr><table><hr />
+  <div id="text" class="text" spellcheck="false"></div>
+  <div id="typing" class="text" contenteditable="true" onkeyup="typedKey()" spellcheck="false"></div>
+  <hr />
+  <table id="results">
+    <tr>
+      <th>Name</th>
+      <th>Lesson</th>
+      <th>Date</th>
+      <th>WPM</th>
+      <th>Time</th>
+    </tr>
+  </table>
+</body>
+</html>

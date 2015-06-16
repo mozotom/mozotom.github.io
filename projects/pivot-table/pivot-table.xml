@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pivot-table.xsl"?>
+
+<!-- Pivot Table Example -->
+<!-- Tomasz Mozolewski @2006 -->
+
+<pivot-table title="Appartment light bulbs" name="Count">
+  <format>
+     <row order="ascending" using="name" data-type="text" />
+     <col order="descending" using="name" data-type="number" />
+     <summary operation="sum" />
+  </format>
+
+  <data>
+    <item row="Master Closet" col="60" value="1" />
+    <item row="Master Bathroom" col="40" value="4" />
+    <item row="Master Bedroom" col="75" value="2" />
+    <item row="Master Bedroom" col="150" value="1" />
+    <item row="Girls Bedroom" col="75" value="0" />
+    <item row="Girls Bathroom" col="40" value="4" />
+    <item row="Girls Bedroom" col="150" value="0" />
+    <item row="Living room" col="150" value="3" />
+    <item row="Dining area" col="75" value="2" />
+    <item row="Hallway" col="75" value="2" />
+    <item row="Kitchen" col="60" value="1" />
+    <item row="Laundry room" col="60" value="1" />
+  </data>
+</pivot-table>
+

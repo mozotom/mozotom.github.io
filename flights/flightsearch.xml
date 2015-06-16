@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Flight Search - Tomasz Mozolewski - Home Page 2003</title>
+	<xsl:value-of select="concat('&lt;','link href=&quot;../default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /','&gt;')" disable-output-escaping="yes"/>
+	<script type="text/javascript" src="../default.js"></script>
+	<script type="text/javascript" src="flightsearch.js"></script>
+	<script type="text/javascript" src="searchsites.js"></script>
+	<base target="_blank" />
+</head>
+<body>
+	<xsl:value-of select="concat('&lt;','form name=&quot;flightSearch&quot; action=&quot;&quot; style=&quot;text-align: center&quot;&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;search&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;srcair&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;srcmon&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;srcday&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;srcyea&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;dstair&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;dstmon&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;dstday&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;dstyea&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;adult&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;senior&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;youth&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;child&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;infantseat&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+		<xsl:value-of select="concat('&lt;','input type=&quot;hidden&quot; name=&quot;infantlap&quot; value=&quot;&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+
+	<table border="0" style="width: 100%"><tr><td style="text-align: left; vertical-align: top">
+
+		<xsl:for-each select="/search/flight"><table border="1" style="width: 100%; text-align: center"><tr>
+			<th>
+				Search:
+				<xsl:variable name="search"><xsl:choose>
+					<xsl:when test="./@search = 'Y'"> checked=&quot;checked&quot;</xsl:when>
+					<xsl:otherwise></xsl:otherwise>
+				</xsl:choose></xsl:variable>
+				<xsl:value-of select="concat('&lt;','input type=&quot;radio&quot; name=&quot;search&quot;', $search, '&gt;&lt;/input&gt;')" disable-output-escaping="yes" />
+			</th>
+			<th>Airport</th><th>Month</th><th>Day</th><th>Year</th>
+		</tr><tr><th style="text-align: right">From:</th>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;3&quot; size=&quot;3&quot; type=&quot;text&quot; name=&quot;srcair&quot; value=&quot;', ./@srcairport, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;2&quot; size=&quot;2&quot; type=&quot;text&quot; name=&quot;srcmon&quot; value=&quot;', ./@srcmonth, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;2&quot; size=&quot;2&quot; type=&quot;text&quot; name=&quot;srcday&quot; value=&quot;', ./@srcday, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;4&quot; size=&quot;4&quot; type=&quot;text&quot; name=&quot;srcyea&quot; value=&quot;', ./@srcyear, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+		</tr><tr><th style="text-align: right">To:</th>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;3&quot; size=&quot;3&quot; type=&quot;text&quot; name=&quot;dstair&quot; value=&quot;', ./@dstairport, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;2&quot; size=&quot;2&quot; type=&quot;text&quot; name=&quot;dstmon&quot; value=&quot;', ./@dstmonth, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;2&quot; size=&quot;2&quot; type=&quot;text&quot; name=&quot;dstday&quot; value=&quot;', ./@dstday, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td><xsl:value-of select="concat('&lt;','input maxlength=&quot;4&quot; size=&quot;4&quot; type=&quot;text&quot; name=&quot;dstyea&quot; value=&quot;', ./@dstyear, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+		</tr><tr><th style="text-align: right">Travelers:</th><td colspan="4"><table border="0" style="text-align: center; width: 100%"><tr>
+	   		<td style="font-size=9">Adult (18-64)<br /><xsl:value-of select="concat('&lt;','input maxlength=&quot;1&quot; size=&quot;1&quot; type=&quot;text&quot; name=&quot;adult&quot; value=&quot;', ./@adult, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td style="font-size=9">Senior (65+)<br /><xsl:value-of select="concat('&lt;','input maxlength=&quot;1&quot; size=&quot;1&quot; type=&quot;text&quot; name=&quot;senior&quot; value=&quot;', ./@senior, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td style="font-size=9">Youth (12-17)<br /><xsl:value-of select="concat('&lt;','input maxlength=&quot;1&quot; size=&quot;1&quot; type=&quot;text&quot; name=&quot;youth&quot; value=&quot;', ./@youth, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td style="font-size=9">Child (2-11)<br /><xsl:value-of select="concat('&lt;','input maxlength=&quot;1&quot; size=&quot;1&quot; type=&quot;text&quot; name=&quot;child&quot; value=&quot;', ./@child, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td style="font-size=9">Infant in seat<br /><xsl:value-of select="concat('&lt;','input maxlength=&quot;1&quot; size=&quot;1&quot; type=&quot;text&quot; name=&quot;infantseat&quot; value=&quot;', ./@infantseat, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+			<td style="font-size=9">Infant in lap<br /><xsl:value-of select="concat('&lt;','input maxlength=&quot;1&quot; size=&quot;1&quot; type=&quot;text&quot; name=&quot;infantlap&quot; value=&quot;', ./@infantlap, '&quot; style=&quot;text-align: center&quot;&gt;&lt;/input&gt;')" disable-output-escaping="yes" /></td>
+	        </tr></table></td></tr></table><br /></xsl:for-each>
+
+	</td><td style="text-align: center; vertical-align: top; width: 475px">
+
+	        <img src="all.gif" onclick="searchFlights('all')" alt="Search All" /><b style="font-size: 0px"> . </b>
+	        <br />
+		<img src="orbitz.gif" onclick="searchFlights('orbitz')" alt="Orbitz" /><b style="font-size: 0px"> . </b>
+		<img src="yahoo.gif" onclick="searchFlights('yahoo')" alt="Yahoo" /><b style="font-size: 0px"> . </b>
+		<img src="expedia.gif" onclick="searchFlights('expedia')" alt="Expedia" /><b style="font-size: 0px"> . </b>
+		<br />
+		<img src="aa.gif" onclick="searchFlights('AA')" alt="American Airlines" /><b style="font-size: 0px"> . </b>
+		<img src="nwa.gif" onclick="searchFlights('NWA')" alt="NorthWest Airlines" /><b style="font-size: 0px"> . </b>
+		<img src="united.gif" onclick="searchFlights('United')" alt="United Airlines" /><b style="font-size: 0px"> . </b>
+
+
+	</td></tr></table>
+	<xsl:value-of select="concat('&lt;','/form','&gt;')" disable-output-escaping="yes" />
+
+	<xsl:value-of select="concat('&lt;','script type=&quot;text/javascript&quot;','&gt;','PageInfo()','&lt;','/script','&gt;')" disable-output-escaping="yes"/>
+	<!-- <xsl:value-of select="'&amp;nbsp;'" disable-output-escaping="yes" /> -->
+</body>             
+</html>
+
+</xsl:template>
+</xsl:stylesheet>
+

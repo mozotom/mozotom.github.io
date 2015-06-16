@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="flightsearch.xml"?>
+
+<search>
+	<flight type="roundtrip" search="Y"
+		srcairport="" srcday="" srcmonth="" srcyear=""
+		dstairport="" dstday="" dstmonth="" dstyear=""
+		adult="1" senior="0" youth="0" child="0" infantseat="0" infantlap="0"
+	/>
+</search>

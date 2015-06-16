@@ -1,0 +1,8 @@
+<!ELEMENT root (branch*)>
+<!ATTLIST root title CDATA "" >
+
+<!ELEMENT branch (branch*) >
+<!ATTLIST branch name CDATA #REQUIRED >
+<!ATTLIST branch link CDATA #IMPLIED >
+<!ATTLIST branch info CDATA #IMPLIED >
+<!ATTLIST branch target CDATA "node" >

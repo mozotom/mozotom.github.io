@@ -1,0 +1,54 @@
+<table><tr>
+<td class="big">URL:<input id="url" class="url" type="text" size="100%" onchange="update()" value="http://192.168.100.1/rf_signal.asp"></input></td>
+<td class="small">Interval:<input id="interval" class="val" type="text" size="4" onchange="update()" value="5"></input></td>
+<td class="small">Left:<input id="clock" class="val" type="text" size="4" ></input></td>
+<td class="small">Last:<input id="frame" class="val" type="text" size="8" ></input></td>
+</tr></table>
+
+<style>
+td.big {
+  width: 100%;
+}
+
+td.small {
+  width: 1%;
+}
+
+input.val {
+  text-align: center;
+}
+
+input.url {
+  size: 100%;
+}
+
+table {
+  width: 100%; 
+  white-space:nowrap;
+}
+</style>
+
+<script type="text/javascript">
+function update() {
+  parent.page.frames['p' + page].location.href = document.getElementById("url").value;
+  document.getElementById("clock").value = parseFloat(document.getElementById("interval").value).toFixed(1);
+  document.getElementById("frame").value = pageMap[page];
+  page = (page + 1) % 4;
+}
+
+function tick() {
+  var i = document.getElementById("clock").value;
+  if (i <= 0) {
+    update();
+  } else {
+    i -= .1;
+    document.getElementById("clock").value = i.toFixed(1);
+  }
+}
+
+var page = 0;
+var pageMap = { 0: "Top Left", 1: "Top Right", 2: "Bottom Left", 3: "Bottom Right" };
+
+update();
+setInterval("tick()", 100);
+</script>

@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" type="text/css" href="ScreenTest.css" />
+  <script type="text/javascript" src="ScreenTest.js"></script>
+</head>
+<body onload="updateLinks()">
+  <form action="RunTest.html" method="GET">
+  <table class="main">
+    <tr class="main">
+      <th class="main">General</th>
+      <th class="main">Colors</th>
+      <th class="main">Pattern</th>
+    </tr>
+    <tr class="main">
+      <td class="main">
+        <table>
+          <tr><td><a href="Display.html">Resolution</a></td></tr>
+        </table>
+      </td>
+      <td class="main">
+        <table>
+          <tr><td><input type="radio" name="C" value="1" checked="checked">1-bit (8 colors)</input></td></tr>
+          <tr><td><input type="radio" name="C" value="2">2-bit (64 colors)</input></td></tr>
+          <tr><td><input type="radio" name="C" value="3">3-bit (512 colors)</input></td></tr>
+          <tr><td><input type="radio" name="C" value="4">4-bit (4,096 colors)</input></td></tr>
+        </table>
+      </td>
+      <td class="main">
+        <table>
+          <tr><td><input type="checkbox" name="Combo" checked="checked">Combo</input></td></tr>
+          <tr><td><input type="checkbox" name="Solid" checked="checked">Solid</input></td></tr>
+          <tr><td><input type="checkbox" name="Horizontal" checked="checked">Horizontal</input></td></tr>
+          <tr><td><input type="checkbox" name="Vertical" checked="checked">Vertical</input></td></tr>
+          <tr><td><input type="checkbox" name="Checker" checked="checked">Checker</input></td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="3"><input type="submit" value="Start Test"></input></td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="3"><i><br />Press &lt;F11&gt; for full screen mode in your browser.<br />Press &lt;Backspace&gt; to return to this screen.</i></td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="3"><i><br />Click on left/right (horizontal) or up/down (vertical)<br />part of the screen to got to prev/next screen</i></td>
+    </tr>
+  </table>
+  </form>
+</body>
+</html>

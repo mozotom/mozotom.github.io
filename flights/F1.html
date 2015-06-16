@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>F1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <meta http-equiv="Refresh" content="180;url=F1.html" />
+    <meta http-equiv="Pragma" content="no-cache" />
+	
+	<script type="text/javascript">
+	  function tick(ticks) {
+	    document.title = "F1 " + ticks + " seconds to reload"
+		if (ticks > 0) {
+		  setTimeout("tick(" + (ticks - 1) + ")", 1000)
+		} else {
+		  window.location.reload()
+		}
+	  }
+	  tick(180)
+	  
+	</script>
+  </head>
+
+  <frameset border="0" frameSpacing="0" frameBorder="0" cols="*">
+    <frame name="node" marginWidth="0" marginHeight="0" src="http://mozotom.50webs.com/flightsearch/FlightSearch.html?s=o&f0=MCO&t0=STL&y0=2011&m0=05&d0=08&n=y&p=1&e=Southwest" />
+  </frameset>
+</html>
+

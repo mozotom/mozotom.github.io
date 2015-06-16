@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Flight search - Tomasz Mozolewski @2011</title>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="Southwest.js"></script>
+    <script type="text/javascript" src="Orbitz.js"></script>
+    <script type="text/javascript" src="FlightSearch.js"></script>
+    <script type="text/javascript" src="FlightEdit.js"></script>
+	<link rel="stylesheet" type="text/css" href="FlightSearch.css" />
+  </head>
+  <body onload="initPage()">
+	<div id="inputForm">
+	  <input id="oneWayTrip" type="radio" name="tripType" value="o" onclick="setOneWayTrip()" onchange="updateSearchUrls()">One Way</input>
+	  <input id="returnTrip" type="radio" name="tripType" value="r" onclick="setReturnTrip()" onchange="updateSearchUrls()">Return</input>
+	  <input id="multiCityTrip" type="radio" name="tripType" value="m" onclick="setMultiCityTrip()" onchange="updateSearchUrls()">Multi-city</input>
+	  <input id="nonStop" type="checkbox" name="nonStop" onchange="updateSearchUrls()">Non-stop</input>
+	  <table class="flightMatrix" id="flightMatrix">
+	    <tr>
+	      <th>From</th>
+	      <th>To</th>
+	      <th>Year</th>
+	      <th>Month</th>
+	      <th>Day</th>
+		  <th><input id="addRowButton" type="button" class="button" onclick="addRow()" value="Add Row"></input></th>
+	    </tr>
+	  </table>
+	  Number of passangers: <input id="passangerCount" type="text" size="1" value="1" onchange="updateSearchUrls()"></input>
+	</div>
+	<div id="searchUrls"></div>
+  </body>
+</html>

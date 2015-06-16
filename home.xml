@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="picpage.xsl"?>
+
+<page title="Home" columns="5">
+  <imggroup>
+    <link href="http://mail.yahoo.com" img="pics/yahoomail.gif" name="Yahoo Mail" />
+  </imggroup>
+  <imggroup>
+    <link href="http://maps.yahoo.com/" img="pics/yahoomaps.gif" name="Yahoo Maps" />
+  </imggroup>
+  <imggroup>
+    <link href="http://groups.yahoo.com/" img="pics/yahoogroups.gif" name="Yahoo Groups" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.box.net/" img="pics/box_logo.gif" name="Box Net" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.50webs.com/members/" img="pics/50webs_logo.gif" name="50webs_logo" />
+  </imggroup>
+  <imggroup>
+    <link href="http://calendar.yahoo.com/anne_doyen" img="pics/calendar.gif" name="Anne's Calendar" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.tvguide.com/listings/setup/localizeComplete.aspx?ServiceId=20566&amp;RedirectUrl=%7e%2flistings%2fdefault.aspx&amp;zip=63366" img="pics/tvguide.gif" name="TV Guide" />
+    <link href="http://www.miastomuzyki.pl/odbior/rmf_aacp.pls" img="pics/rmffm.gif" name="RMF FM Polskie Radio" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.cnn.com/" img="pics/cnn.gif" name="CNN" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.weather.com/weather/map/63368?showanimation=yes&amp;mapregion=us_stl_closeradar_plus_usen" img="pics/weather.gif" name="Weather" />
+  </imggroup>
+  <imggroup>
+    <link href="http://news.bbc.co.uk/" 
+    img="pics/bbc.gif" name="BBC" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.aopa.org/" img="pics/aopa.jpg" name="AOPA" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.capitalone.com/" img="pics/capitalone.gif" name="Capital One" />
+  </imggroup>
+  <imggroup>
+    <link href="https://www.bankofamerica.com/" img="pics/bankofamerica.gif" name="Bank of America" />
+  </imggroup>
+  <imggroup>
+    <link href="https://banking.commercebank.com/" img="pics/commercebank.jpg" name="Commerce Bank" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.missourigasprices.com/map_gas_prices.aspx?z=7&amp;lat=38.722656&amp;long=-90.671021&amp;ft=A&amp;tl=48" img="pics/gas.gif" name="Gas Prices" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.rarlab.com/download.htm" img="pics/far.gif" name="Far Download" />
+    <link href="http://www.rarlab.com/download.htm" img="pics/rar.gif" name="Rar Download" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.epinions.com/" img="pics/epinions.gif" name="Epinions" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.w3schools.com/" img="pics/w3schools.gif" name="W3Schools" />
+  </imggroup>
+  <imggroup>
+    <link href="http://windowsupdate.microsoft.com/" img="pics/windows.gif" name="Windows Updates" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.wordiq.com/" img="pics/wordiq.gif" name="WordIQ" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.ofoto.com/" img="pics/ofoto.gif" name="OFoto" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.amazon.com/" img="pics/amazon.gif" name="Amazon.com Books" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.vistaprint.com/" img="pics/vistaprint.gif" name="Vista Print" />
+  </imggroup>
+  <imggroup>
+    <link href="http://www.ebay.com" img="pics/ebay.gif" name="Ebay" />
+  </imggroup>
+  <imggroup>
+    <link href="http://photo.net/bboard/forum?topic_id=1481" img="pics/photonet.gif" name="photo.net" />
+  </imggroup>
+</page>
+

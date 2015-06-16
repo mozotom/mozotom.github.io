@@ -1,0 +1,60 @@
+body {
+  background: url("whitebk.gif");
+  margin: 2px;
+  word-break: break-all;
+}
+
+b { 
+  font-weight: bold;
+}
+
+i { 
+  font-style: italic;
+}
+
+a { 
+  color: blue;
+}
+
+a:hover { 
+  color: red;
+}
+
+td.tree {
+ vertical-align: top;
+}
+
+input.inactive {
+  color: #7F7F7F;
+  width: 100%;
+}
+
+input.active {
+  color: #000000;
+  background-color: #FFFFBF;
+  width: 100%;
+}
+
+td.medium {
+  width: 33%;
+  text-align: center;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+td.small {
+  width: 10%;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+td.large {
+  width: 80%;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+div.footer {
+  text-align: center;
+  font-size: 75%;
+}

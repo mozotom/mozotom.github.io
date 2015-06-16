@@ -1,0 +1,319 @@
+-- Author: Tomasz Mozolewski
+-- Copyright @2009
+
+-- Business day calendar implementation in  Oracle DB
+-- See accompanying documentation for usage information
+
+
+
+--
+-- Table Definition
+--
+
+drop table BUSINESS_DAY_EXCLUSIONS;
+
+create table BUSINESS_DAY_EXCLUSIONS (
+CALENDAR_NAME varchar2(30) not null,
+DAY_OF_WEEK_IN_MONTH number null check (-5 <= DAY_OF_WEEK_IN_MONTH AND DAY_OF_WEEK_IN_MONTH <=5),
+DAY_OF_WEEK char(3) null check (DAY_OF_WEEK in ('SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT')),
+DAY_OF_MONTH number null check (1 <= DAY_OF_MONTH AND DAY_OF_MONTH <= 31),
+MONTH char(3) null check (MONTH in ('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC')),
+YEAR number null,
+DESCRIPTION varchar2(250) not null,
+UPDATED_BY varchar2(30) not null,
+UPDATED_ON date not null
+);
+
+CREATE INDEX BUSINESS_DAY_EXCLUSIONS_I ON BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME, DAY_OF_WEEK_IN_MONTH, DAY_OF_WEEK, DAY_OF_MONTH, MONTH, YEAR);
+
+
+
+--
+-- Initial Data Load
+--
+
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',NULL,'SUN',NULL,NULL,NULL,'Sundays','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',NULL,NULL,1,'JAN',NULL,'New Years Day','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',3,'MON',NULL,'JAN',NULL,'Birthday of Martin Luther King(Third Monday in January)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',3,'MON',NULL,'FEB',NULL,'Presidents Day / Washingtons Birthday(Third Monday in February)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',-1,'MON',NULL,'MAY',NULL,'Memorial Day (Last Monday in May)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',NULL,NULL,4,'JUL',NULL,'Independence Day','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',1,'MON',NULL,'SEP',NULL,'Labor Day (First Monday in September)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',2,'MON',NULL,'OCT',NULL,'Columbus Day (Second Monday in October)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',NULL,NULL,11,'NOV',NULL,'Veterans Day','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',4,'THU',NULL,'NOV',NULL,'Thanksgiving Day (Fourth Thursday in November)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('Precise',NULL,NULL,25,'DEC',NULL,'Christmas Day','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',NULL,'SUN',NULL,NULL,NULL,'Sundays','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',NULL,'SAT',NULL,NULL,NULL,'Saturdays','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',NULL,NULL,1,'JAN',NULL,'New Years Day','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',3,'MON',NULL,'JAN',NULL,'Birthday of Martin Luther King(Third Monday in January)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',3,'MON',NULL,'FEB',NULL,'Presidents Day / Washingtons Birthday(Third Monday in February)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',-1,'MON',NULL,'MAY',NULL,'Memorial Day (Last Monday in May)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',NULL,NULL,4,'JUL',NULL,'Independence Day','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',NULL,NULL,3,'JUL',2009,'Independence Day Observed','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',1,'MON',NULL,'SEP',NULL,'Labor Day (First Monday in September)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',2,'MON',NULL,'OCT',NULL,'Columbus Day (Second Monday in October)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',NULL,NULL,11,'NOV',NULL,'Veterans Day','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',4,'THU',NULL,'NOV',NULL,'Thanksgiving Day (Fourth Thursday in November)','tm91263',SYSDATE);
+insert into BUSINESS_DAY_EXCLUSIONS (CALENDAR_NAME,DAY_OF_WEEK_IN_MONTH,DAY_OF_WEEK,DAY_OF_MONTH,MONTH,YEAR,DESCRIPTION,UPDATED_BY,UPDATED_ON) values('General',NULL,NULL,25,'DEC',NULL,'Christmas Day','tm91263',SYSDATE);
+
+
+
+--
+-- isBusinessDay Function
+--
+
+-- For given calendar name and date returns
+-- 0: if date is NOT a business day according to specified calendar
+-- 1: if date is a business day according to specified calendar
+
+CREATE OR REPLACE FUNCTION isBusinessDay
+  (calendarName IN varchar2, calDate IN date)
+  RETURN number
+
+IS
+
+  -- Determine values for each column
+  dayOfWeek char(3) := to_char(calDate, 'DY');
+  dayOfMonth number := extract(Day from calDate);
+  calMonth char(3) := to_char(calDate, 'MON');
+  calYear number := extract(Year from calDate);
+  dayOfWeekInMonth number := trunc((dayOfMonth - 1) / 7) + 1;
+  negativeDayOfWeekInMonth number := -trunc((extract(day from last_day(trunc(calDate))) - dayOfMonth) / 7) - 1;
+  
+  -- Number of exclusions that matched given date
+  exclusionsCount number;
+  
+  -- Query counts how many rules match given date
+  cursor bdeCursor is
+    select count(*) from BUSINESS_DAY_EXCLUSIONS
+    where calendarName = CALENDAR_NAME
+      and (DAY_OF_WEEK_IN_MONTH is null 
+        or DAY_OF_WEEK_IN_MONTH = dayOfWeekInMonth 
+        or DAY_OF_WEEK_IN_MONTH = negativeDayOfWeekInMonth)
+      and (DAY_OF_WEEK is null or DAY_OF_WEEK = dayOfWeek)
+      and (DAY_OF_MONTH is null or DAY_OF_MONTH = dayOfMonth)
+      and (MONTH is null or MONTH = calMonth)
+      and (YEAR is null or YEAR = calYear);
+
+BEGIN
+
+  open bdeCursor;
+  fetch bdeCursor into exclusionsCount;
+  
+  if exclusionsCount > 0 then
+    -- Given date is NOT a business day
+    return 0;
+  else
+    -- Given date is a business day
+    return 1;
+  end if;
+
+EXCEPTION
+
+WHEN OTHERS THEN
+  raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);
+
+END;
+
+
+
+-- 
+-- getBusinessDayAfter
+-- 
+
+-- For given calendar name, date and number of days
+-- returns date that is specified number of business days later
+--
+-- If number of days is 0 (zero) and given date is a business day
+-- then same date is returned. If given date is not a business day,
+-- then next business day is returned.
+
+CREATE OR REPLACE FUNCTION getBusinessDayAfter
+  (calendarName IN varchar2, calDate IN date, days IN number)
+  RETURN date IS
+
+BEGIN
+  
+  return getBusinessDay(calendarName, calDate, days, 1);
+  
+EXCEPTION
+
+WHEN OTHERS THEN
+  raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);
+
+END;
+
+
+
+-- 
+-- getBusinessDayBefore
+-- 
+
+-- For given calendar name, date and number of days
+-- returns date that is specified number of business days earlier
+--
+-- If number of days is 0 (zero) and given date is a business day
+-- then same date is returned. If given date is not a business day,
+-- then previous business day is returned.
+
+CREATE OR REPLACE FUNCTION getBusinessDayBefore
+  (calendarName IN varchar2, calDate IN date, days IN number)
+  RETURN date IS
+
+BEGIN
+  
+  return getBusinessDay(calendarName, calDate, days, -1);
+  
+EXCEPTION
+
+WHEN OTHERS THEN
+  raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);
+
+END;
+
+
+
+-- 
+-- getBusinessDay
+-- 
+
+-- For given calendar name, date, number of days and increment
+-- returns date that is specified number of business days
+-- earlier (if increment = -1) or later (if increment = 1)
+--
+-- If number of days is 0 (zero) and given date is a business day
+-- then same date is returned. If given date is not a business day,
+-- then previous/next (based on increment) business day is returned.
+
+CREATE OR REPLACE FUNCTION getBusinessDay
+  (calendarName IN varchar2, calDate IN date, days IN number, daysIncrement IN number)
+  RETURN date
+
+IS
+
+  newDate date := moveToBusinessDay(calendarName, calDate, daysIncrement);
+  daysLeft number := days;
+
+BEGIN
+  
+  while daysLeft > 0
+  loop
+    newDate := moveToBusinessDay(calendarName, newDate + daysIncrement, daysIncrement);
+    daysLeft := daysLeft - 1;
+  end loop;
+  
+  return newDate;
+  
+EXCEPTION
+
+WHEN OTHERS THEN
+  raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);
+
+END;
+
+
+
+-- 
+-- moveToBusinessDay
+-- 
+
+-- For given calendar name, date and increment returns business day date.
+-- If given date is a business day
+-- then same date is returned. If given date is not a business day,
+-- then previous/next (based on increment) business day is returned.
+
+CREATE OR REPLACE FUNCTION moveToBusinessDay
+  (calendarName IN varchar2, calDate IN date, daysIncrement IN number)
+  RETURN date
+
+IS
+
+  newDate date := calDate;
+
+BEGIN
+  
+  while isBusinessDay(calendarName, newDate) = 0
+  loop
+    newDate := newDate + daysIncrement;
+  end loop;
+  
+  return newDate;
+  
+EXCEPTION
+
+WHEN OTHERS THEN
+  raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);
+
+END;
+
+
+
+--
+-- Example usage 
+--
+
+-- Fourth of July is not a business day according to both definitions
+select isBusinessDay('Precise', to_date('07/04/2009', 'mm/dd/yyyy')) from dual;
+select isBusinessDay('General', to_date('07/04/2009', 'mm/dd/yyyy')) from dual;
+
+-- Third of July is a business day according to Precise definition only
+select isBusinessDay('Precise', to_date('07/03/2009', 'mm/dd/yyyy')) from dual;
+select isBusinessDay('General', to_date('07/03/2009', 'mm/dd/yyyy')) from dual;
+
+-- If you don't like 0/1, you can use Y/N to
+select decode(isBusinessDay('Precise', to_date('07/03/2009', 'mm/dd/yyyy')), 1, 'Y', 'N') from dual;
+select decode(isBusinessDay('General', to_date('07/03/2009', 'mm/dd/yyyy')), 1, 'Y', 'N') from dual;
+
+
+
+-- Get business date for 7/3/09 (if 7/3/09 is business day return it, otherwise return next business day)
+
+-- 7/3/09 is business day according to precise definition
+select getBusinessDayAfter('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 0) from dual;
+
+-- 7/3/09 is not a business day according to general definition so return next business day which is 7/6/09
+select getBusinessDayAfter('General', to_date('07/03/2009', 'mm/dd/yyyy'), 0) from dual;
+
+
+
+-- Get business date that is 3 business days after 7/3/09
+
+-- 7/3/09 is business day according to precise definition so start counting from 7/3/09 and return 7/8/09
+select getBusinessDayAfter('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 3) from dual;
+
+-- 7/3/09 is not a business day according to general definition so start counting from 7/6/09 and return 7/9/09
+select getBusinessDayAfter('General', to_date('07/03/2009', 'mm/dd/yyyy'), 3) from dual;
+
+
+
+-- 
+-- Test
+-- 
+
+select getBusinessDayAfter('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 0) from dual;
+select getBusinessDayAfter('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 1) from dual;
+select getBusinessDayAfter('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 2) from dual;
+select getBusinessDayAfter('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 3) from dual;
+
+select getBusinessDayBefore('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 0) from dual;
+select getBusinessDayBefore('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 1) from dual;
+select getBusinessDayBefore('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 2) from dual;
+select getBusinessDayBefore('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 3) from dual;
+
+select moveToBusinessDay('General', to_date('07/03/2009', 'mm/dd/yyyy'), 1) from dual;
+select moveToBusinessDay('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 1) from dual;
+
+select moveToBusinessDay('General', to_date('07/05/2009', 'mm/dd/yyyy'), -1) from dual;
+select moveToBusinessDay('Precise', to_date('07/05/2009', 'mm/dd/yyyy'), -1) from dual;
+
+select getBusinessDay('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 0, 1) from dual;
+select getBusinessDay('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 1, 1) from dual;
+select getBusinessDay('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 2, 1) from dual;
+select getBusinessDay('Precise', to_date('07/03/2009', 'mm/dd/yyyy'), 3, 1) from dual;
+
+select getBusinessDay('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 0, -1) from dual;
+select getBusinessDay('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 1, -1) from dual;
+select getBusinessDay('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 2, -1) from dual;
+select getBusinessDay('Precise', to_date('07/07/2009', 'mm/dd/yyyy'), 3, -1) from dual;
+

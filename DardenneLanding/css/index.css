@@ -1,0 +1,120 @@
+/* Copyright @2013 Tomasz Mozolewski */
+
+html {
+  height: 100%;
+  margin: 0em;
+}
+
+body {
+  padding: 0.1em;
+  margin: 0em;
+  background-image: url('../img/dardenne-woods-sunset.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
+}
+
+a {
+  color: #3F2A18;
+}
+
+a:visited {
+  color: #3F2A18;
+}
+
+a:hover {
+  color: #007F00;
+}
+
+.button {
+  margin: 0.4em;
+  padding: 0.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 0.3em;
+  line-height: 2em;
+  background-color: #203020;
+  background: linear-gradient(135deg, #304030 0%,#102010 100%);
+  color: #C0C0C0;
+}
+
+.button:hover {
+  background-color: #105010;
+  background: linear-gradient(135deg, #104010 0%,#306030 100%);
+  color: #E0E0E0;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+#page-header {
+  margin-top: .3em;
+}
+
+#page-footer {   
+  position:fixed;
+  bottom:0em;
+  height:1.7em;
+  width:100%;
+  text-align: right;
+}
+
+#page-footer span {
+  background-color:rgba(255,255,255,0.4);
+  background: linear-gradient(135deg, rgba(255,255,255,.5) 0%,rgba(223,223,223,0.25) 100%);
+  color:rgba(63,42,24,.75);
+  padding: 0.1em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  border-radius: 0.3em;
+  margin-right: 1em;
+  font-size: 0.7em;
+}
+
+#page-body {
+  width: 60%;
+  margin-bottom: 2.7em;
+}
+
+.tab {
+  display: none;
+  margin: 0.4em;
+  padding: 0.4em;
+  padding-top: 0.01em;
+  border-radius: 0.3em;
+  background-color:rgba(255,255,255,0.4);
+  background: linear-gradient(135deg, rgba(255,255,255,.75) 0%,rgba(191,191,191,0.5) 100%);
+  color: #3F2A18;
+}
+
+table.ref {
+  display: box;
+  width: 0.001em;
+  border-collapse: collapse;
+}
+
+table.ref th {
+  vertical-align: top;
+  text-align: right;
+}
+
+table.ref td, table.ref th {
+  padding: 0.35em;
+  width: 50%;
+  white-space:nowrap;
+}
+
+h1 {
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+li a img {
+  margin-left: 0.3em;
+}
+
+img {
+  border:none;
+}

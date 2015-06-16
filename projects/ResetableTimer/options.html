@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>Resetable Timer - Copyright @2012 Tomasz Mozolewski</title>
+
+  <script type="text/javascript">
+    function val(id) {
+      return document.getElementById(id).value;
+    }
+    
+    function openPage(t, h, f, d, s, c) {
+      location.href = "ResetableTimer.html?t=" + escape(t) + "&half=sounds/half" + escape(h) + ".mp3&finish=sounds/finish" + escape(f) + ".mp3&d=" + escape(d) + "&s=" + escape(s) + "&c=" + escape(c);
+    }
+  </script>
+  <style>
+    input.num {
+      text-align: right;
+      width: 50px;
+    }
+    input.but {
+      text-align: center;
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+  <table>
+    <tr>
+      <td>Time (s): </td><td><input class="num" type="text" id="t" value="120"></input></td>
+    </tr>
+    <tr>
+      <td>Half Sound: </td>
+      <td>
+        <select id="h">
+          <option value="0">Drop</option>
+          <option value="1">Sword</option>
+          <option value="2">Pop Low</option>
+          <option value="3">Sonar</option>
+          <option value="4">Car Lock</option>
+          <option value="5">Pop High</option>
+          <option value="6">Beep</option>
+          <option value="7">Click</option>
+          <option value="8">Tweet</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Finish Sound: </td>
+      <td>
+        <select id="f">
+          <option value="0">Splash</option>
+          <option value="1">Gun</option>
+          <option value="2">Gong</option>
+          <option value="3">Phone</option>
+          <option value="4">Bike Horn</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Display: </td>
+      <td>
+        <select id="d">
+          <option value="c">Circle</option>
+          <option value="f">Full Screen</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Style: </td>
+      <td>
+        <select id="s">
+          <option value="arc">Arc</option>
+          <option value="shrink">Shrink</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Clock: </td>
+      <td>
+        <select id="c">
+          <option value="y">Yes</option>
+          <option value="n">No</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><input class="but" type="submit" onsubmit="return false" onclick="openPage(val('t'), val('h'), val('f'), val('d'), val('s'), val('c')); return false" value="Start"></input></td>
+    </tr>
+  </table>
+  </form>
+</body>
+</html>
+

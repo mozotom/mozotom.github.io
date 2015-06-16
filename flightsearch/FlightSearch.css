@@ -1,0 +1,17 @@
+table.flightMatrix , th, td {
+  border-collapse:collapse;
+  border: 1px solid black;
+}
+ 
+th {
+  color: white;
+  background-color: black;
+}
+ 
+input.button {
+  width: 100%;
+}
+ 
+input {
+   text-align: center;
+}

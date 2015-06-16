@@ -1,0 +1,53 @@
+<!-- Copyright @2013 Tomasz Mozolewski -->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="ContactsEditor.css">
+  <script type="text/javascript" src="ContactsEditor.js"></script>
+</head>
+<body onload="init()">
+  <table>
+    <tr>
+      <th>Input</th>
+      <th>Output</th></tr>
+    <tr>
+      <td><textarea name="invcf" id="invcf" rows="4" cols="40"></textarea></td>
+      <td><textarea name="outvcf" id="outvcf" rows="4" cols="40"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="checkbox" name="xAttr" id="xAttr" checked="checked" />Remove non standard attributes<br />
+        <input type="checkbox" name="attrPRODID" id="attrPRODID" checked="checked" />Remove PRODID attribute<br />
+        <input type="checkbox" name="attrREV" id="attrREV" checked="checked" />Remove REV attribute<br />
+        Skip lines with patterns (egrep): <input type="text" name="skipPattern" id="skipPattern" value="^TEL;.*FAX|^LABEL;WORK;PREF;ENCODING=QUOTED-PRINTABLE.*BUILDING/FLOOR/ZONE"></input>
+      </td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="2">
+        <button onclick="loadData()" accesskey="L"><u>L</u>oad Data</button>
+        <button onclick="genResult()" accesskey="G"><u>G</u>enenrate Result</button>
+      </td>
+    </tr>
+    <tr>
+      <td class="buttons" colspan="2"><div id="status"></div></td>
+    </tr>
+  </table>
+  
+  <hr />
+  
+  <table id="compvcf">
+    <tr id="header">
+      <th>Attribute</th>
+      <th>Value</th>
+    </tr>
+    <tr id="buttons">
+      <td class="buttons" colspan="2">
+        <button type="button" onclick="addContact()" accesskey="A"><u>A</u>dd</button>
+        <button type="button" onclick="showPrev()" accesskey="P"><u>P</u>rev</button>
+        <button type="button" onclick="showNext()" accesskey="N"><u>N</u>ext</button>
+        <button type="button" onclick="delContact()" accesskey="X"><u>X</u></button>
+      </td>
+    </tr>
+   </table>
+   
+</body>
+</html>

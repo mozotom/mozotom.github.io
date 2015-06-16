@@ -1,0 +1,80 @@
+td.title {
+    font-style: italic;
+    text-align: center;
+}
+
+table.t {
+    border-collapse: collapse;
+}
+
+table.t th {
+}
+
+table.t td {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    spacing: 0px;
+    padding: 0px;
+}
+
+table.x {
+    border-collapse: collapse;
+}
+
+table.x th {
+}
+
+table.x td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    spacing: 0px;
+    padding: 0px;
+}
+
+input.x {
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    font-size: 24;
+    font-weight: bold;
+    border-style: none;
+}
+
+table.m {
+}
+
+table.m th {
+}
+
+table.m td {
+    text-align: center;
+}
+
+input.highlight {
+    background-color: #FFFF7F;
+    color: black;
+}
+
+input.grayout {
+    background-color: #CFCFCF;
+    color: black;
+}
+
+input.normal {
+    background-color: white;
+    color: black;
+}
+
+input.h {
+    color: #BFBFBF;
+}
+
+input.trivial {
+    background-color: #CFFFCF;
+}
+
+textarea.storage {
+    
+}

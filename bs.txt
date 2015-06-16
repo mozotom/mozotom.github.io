@@ -1,0 +1,13 @@
+http://www.munseys.com/mobi/
+http://m.gutenberg.org/
+http://www.feedbooks.com/catalog.atom
+http://catalog.oreilly.com/stanza/main.xml
+http://allromanceebooks.com/epub-feed.xml
+http://www.smashwords.com/lexcycle/
+http://bookglutton.com/api/stanza
+http://www.webscription.net/stanza.aspx
+http://www.booksonboard.com/xml/catalog.atom
+http://bookserver.archive.org/catalog/
+http://www.manybooks.net/opds/index.php
+http://www.manybooks.net/m/
+http://www.legimi.com/opds/root.atom
