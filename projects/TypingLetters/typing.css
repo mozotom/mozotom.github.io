@@ -1,0 +1,25 @@
+.text {
+  font-family: Courier New;
+  font-size: 3em;
+}
+
+.highlight {
+  color: blue;
+  font-weight: bold;
+  background-color: lightgray;
+}
+
+.grayout {
+  color: lightgray;
+}
+
+.errorhighlight {
+  color: red;
+  font-weight: bold;
+  background-color: lightgray;
+}
+
+.info {
+  padding-left: 15px;
+  padding-right: 15px;
+}

@@ -56,7 +56,8 @@
         <branch link="projects/FlashCards/options.html" name="Math Flash Cards" target="_blank" />
         <branch link="projects/School/2-Math-Add-Sub-20.xls" name="2nd Grade Math - Add Sub 20" />
         <branch link="projects/School/Math.xlsm" name="Math - Add Sub Mult Div 0-9" />
-        <branch link="projects/Typing/typing.html" name="Typing" />
+        <branch link="projects/Typing/typing.html" name="Typing Words" />
+        <branch link="projects/TypingLetters/typing.html" name="Typing Letters" />
       </branch>
       <branch name="Web code examples">
         <branch link="projects/pivot-table/pivot-table.xml" name="Pivot Table" />

@@ -1,0 +1,31 @@
+<html>
+<head>
+  <script type="text/javascript" src="lessons.js"></script>
+  <script type="text/javascript" src="typing.js"></script>
+  <link rel="stylesheet" type="text/css" href="typing.css" />
+</head>
+<body onload="init(); loadName(); loadResults(); startTyping()">
+  <table><tr>
+  <td>Name: <input id="name" onchange="saveName()"></input></td>
+  <td>Lesson: <select id="lesson" onchange="loadWords()"></select>
+  </td>
+  <td>
+    <input type="Button" onclick="startTyping()" value="START" />
+  </td>
+  <td><div id="time" class="info"></div></td>
+  <td><div id="wpm" class="info"></div></td>
+  </tr><table><hr />
+  <div id="text" class="text" spellcheck="false"></div>
+  <div id="typing" class="text" contenteditable="true" onkeyup="typedKey()" spellcheck="false"></div>
+  <hr />
+  <table id="results">
+    <tr>
+      <th>Name</th>
+      <th>Lesson</th>
+      <th>Date</th>
+      <th>WPM</th>
+      <th>Time</th>
+    </tr>
+  </table>
+</body>
+</html>
