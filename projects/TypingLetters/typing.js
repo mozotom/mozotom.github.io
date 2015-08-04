@@ -3,11 +3,15 @@ var text = "";
 var t0 = -1;
 
 function init() {
+  var lesson = localStorage.getItem("lesson");
+  lesson = lesson==null ? 0 : lesson;
+
   var lessonElm = document.getElementById("lesson");
   for (var i=0; i<lessons.length; ++i) {
     var optionElm = document.createElement("option");
     optionElm.value = i;
     optionElm.innerText = (i + 1) + ": " + lessons[i];
+    optionElm.selected = i == lesson;
     lessonElm.appendChild(optionElm);
   }
   setTimeout(loadWords, 1);
@@ -23,6 +27,8 @@ function saveName() {
 
 function loadWords() {
   var lesson = document.getElementById("lesson").value;
+  localStorage.setItem("lesson", lesson);
+  
   var oldLetters = "";
   for (var i = 0; i < lesson; ++i) {
     oldLetters += lessons[i];
@@ -177,6 +183,7 @@ function startTyping() {
   dom.innerText = "";
   t0 = -1;
   dom.focus();
+  typedKey();
 }
 
 function placeCaretAtEnd(el) {
