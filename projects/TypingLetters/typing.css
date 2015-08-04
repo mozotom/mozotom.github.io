@@ -4,10 +4,8 @@
 }
 
 #typing {
-  border-width: 2px;
-  border-style: solid;
-  border-color: red;
-  background-color: #FFFF7F;
+  font-size: 0.001em;
+  color: white;
 }
 
 .highlight {
