@@ -1,6 +1,7 @@
 var nbsp = '\u00a0';
 var text = "";
 var t0 = -1;
+var errCount = 0;
 
 function init() {
   var lesson = localStorage.getItem("lesson");
@@ -63,6 +64,7 @@ function typedKey() {
   var t1 = document.getElementById("typing").innerText;
   while (t0.substr(0, t1.length).trim() != t1.trim()) {
     t1 = t1.substr(0, t1.length - 1);
+    ++errCount;
   }
   document.getElementById("typing").innerText = t1;
   
@@ -81,6 +83,7 @@ function updateTiming() {
   
   if (txt1.length < 1) {
     t0 = -1;
+    errCount = 0;
   } else if (t0 < 0) {
     t0 = performance.now();
   }
@@ -100,23 +103,24 @@ function updateTiming() {
   } else {
     var timeText = "0:00";
     var wpmText = "0 WPM";
-  }  
+  }
   
   document.getElementById("time").innerText = timeText;
   document.getElementById("wpm").innerText = wpmText;
+  document.getElementById("errors").innerText = "Errors: " + errCount;
   
   if ((txt0.length == n) && (n > 1)) {
-    saveResult(wpm, timeText);
+    saveResult(wpm, timeText, errCount);
     startTyping();
   }
 }
 
-function saveResult(wpm, tt) {
+function saveResult(wpm, tt, errors) {
   var name = document.getElementById("name").value;
   var lesson = document.getElementById("lesson").value;
   var now = new Date();
   var timestamp = (1900 + now.getYear()) + "/" + now.getMonth() + "/" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-  var result = name + "\t" + lesson + "\t" + timestamp + "\t" + wpm + "\t" + tt;
+  var result = name + "\t" + lesson + "\t" + timestamp + "\t" + wpm + "\t" + tt + "\t" + errors;
   var results = localStorage.getItem("results");
   if (results == null) results = ""; else result += "\n";
   localStorage.setItem("results", result + results);
@@ -182,6 +186,7 @@ function startTyping() {
   var dom = document.getElementById("typing")
   dom.innerText = "";
   t0 = -1;
+  errCount = 0;
   dom.focus();
   typedKey();
 }
