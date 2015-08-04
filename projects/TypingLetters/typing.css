@@ -3,6 +3,13 @@
   font-size: 3em;
 }
 
+#typing {
+  border-width: 2px;
+  border-style: solid;
+  border-color: red;
+  background-color: #FFFF7F;
+}
+
 .highlight {
   color: blue;
   font-weight: bold;
