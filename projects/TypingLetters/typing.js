@@ -10,6 +10,7 @@ function init() {
     optionElm.innerText = (i + 1) + ": " + lessons[i];
     lessonElm.appendChild(optionElm);
   }
+  setTimeout(loadWords, 1);
 }
 
 function loadName() {
@@ -33,7 +34,6 @@ function loadWords() {
   startTyping();
   typedKey();
 }
-setTimeout(loadWords, 1);
 
 function randomWords(charCount, oldLetters, newLetters) {
   var result = "";
