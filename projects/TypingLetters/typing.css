@@ -28,3 +28,11 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+#header {
+  text-align: center;
+}
+
+table#topinfo {
+    margin: 0 auto;
+}
