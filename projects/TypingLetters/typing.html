@@ -4,13 +4,13 @@
   <script type="text/javascript" src="typing.js"></script>
   <link rel="stylesheet" type="text/css" href="typing.css" />
 </head>
-<body onload="init(); loadName(); loadResults(); startTyping()">
+<body onload="init(); loadName(); loadResults(); loadWords()">
   <div id="header">
     <table id="topinfo"><tr>
       <td>Name: <input id="name" onchange="saveName()"></input></td>
       <td>Lesson: <select id="lesson" onchange="loadWords()"></select></td>
       <td>
-        <input type="Button" onclick="startTyping()" value="START" />
+        <input type="Button" onclick="loadWords()" value="START" />
       </td>
       <td><div id="time" class="info"></div></td>
       <td><div id="wpm" class="info"></div></td>

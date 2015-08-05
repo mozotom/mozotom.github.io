@@ -60,9 +60,9 @@ function getRandomLetter(letters) {
 }
 
 function typedKey() {  
-  var t0 = document.getElementById("text").innerText;
-  var t1 = document.getElementById("typing").innerText;
-  while (t0.substr(0, t1.length).trim() != t1.trim()) {
+  var t0 = clean(document.getElementById("text").innerText);
+  var t1 = clean(document.getElementById("typing").innerText);
+  while (t0.substr(0, t1.length) != t1) {
     t1 = t1.substr(0, t1.length - 1);
     ++errCount;
   }
@@ -75,6 +75,10 @@ function typedKey() {
   highlight("text", k);
   highlightErrors();
   placeCaretAtEnd(typingDom);
+}
+
+function clean(str) {
+  return str.replace(/ /g, nbsp);
 }
 
 function updateTiming() {
