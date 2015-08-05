@@ -34,5 +34,10 @@
 }
 
 table#topinfo {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+table#results, table#results td, table#results th {
+  border: solid 1px #000000;
+  border-collapse: collapse;
+  padding: 5px;
 }

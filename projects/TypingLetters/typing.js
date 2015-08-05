@@ -1,3 +1,6 @@
+var totalCharCount = 111;
+var maxResults = 20;
+
 var nbsp = '\u00a0';
 var text = "";
 var t0 = -1;
@@ -37,7 +40,7 @@ function loadWords() {
   var newLetters = lessons[lesson];
   
   document.getElementById("typing").innerText = "";
-  text = randomWords(111, oldLetters, newLetters);
+  text = randomWords(totalCharCount, oldLetters, newLetters);
   startTyping();
   typedKey();
 }
@@ -121,7 +124,7 @@ function updateTiming() {
 
 function saveResult(wpm, tt, errors) {
   var name = document.getElementById("name").value;
-  var lesson = document.getElementById("lesson").value;
+  var lesson = parseInt(document.getElementById("lesson").value) + 1;
   var now = new Date();
   var timestamp = (1900 + now.getYear()) + "/" + now.getMonth() + "/" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
   var result = name + "\t" + lesson + "\t" + timestamp + "\t" + wpm + "\t" + tt + "\t" + errors;
@@ -135,6 +138,7 @@ function loadResults() {
   var resTbl = document.getElementById("results");
   var results = localStorage.getItem("results");
   results = results==null ? [] : results.split('\n');
+  results.length = (results.length > maxResults) ? maxResults : results.length;
   
   while (resTbl.rows.length > 1) {
     resTbl.deleteRow(1);
