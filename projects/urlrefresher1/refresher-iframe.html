@@ -1,0 +1,100 @@
+<html>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+td.big {
+  width: 100%;
+}
+
+td.small {
+  width: 1%;
+}
+
+input.val {
+  text-align: center;
+}
+
+input.url {
+  size: 100%;
+}
+
+table {
+  width: 100%;
+  white-space:nowrap;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<script type="text/javascript">
+function update() {
+  document.getElementById("doc").src = document.getElementById("url").value;
+  document.getElementById("clock").value = parseFloat(document.getElementById("interval").value).toFixed(0);
+}
+
+function tick() {
+  var i = document.getElementById("clock").value;
+  if (i <= 0) {
+    update();
+  } else {
+    i -= 1;
+    document.getElementById("clock").value = i.toFixed(0);
+  }
+}
+
+function S_GET(id){
+    var a = new RegExp(id+"=([^&#=]*)");
+    var x = a.exec(window.location.search);
+    return x != null ? decodeURIComponent(x[1]) : null;
+}
+
+function loadQuery(name) {
+  var q = S_GET(name);
+  if (q != null) {
+    document.getElementById(name).value = q;
+  }
+}
+
+function setQueryUrl() {
+  var rurl = document.getElementById('url').value;
+  var interval = document.getElementById('interval').value;
+  var hidden = document.getElementById('setup').style.display == 'none';
+  var url = location.href.replace(/\?.*/, "") + "?url=" + encodeURIComponent(rurl) + "&interval=" + encodeURIComponent(interval) + "&hidden=" + hidden;
+  history.pushState({}, rurl + "#" + interval, url);
+}
+
+function init() {
+  loadQuery('url'); 
+  loadQuery('interval'); 
+  update(); 
+  setInterval('tick()', 1000);
+
+  var q = S_GET('hidden');
+  if (q != null && q == 'true') {
+    document.getElementById('setup').style.display = 'none';
+  }
+}
+
+</script>
+
+</head>
+
+<body marginwidth="0" marginheight="0" onload="init()">
+
+<table id="setup"><tbody><tr>
+<td class="big">URL:<input id="url" class="url" type="text" size="100%" onchange="update(); setQueryUrl();" value=""></td>
+<td class="small"><input type="button" value="Hide" onclick="document.getElementById('setup').style.display = 'none'; setQueryUrl();"></td>
+<td class="small">Interval:<input id="interval" class="val" type="text" size="4" onchange="update(); setQueryUrl();" value="60"></td>
+<td class="small">Left:<input id="clock" class="val" type="text" size="4"></td>
+</tr></tbody></table>
+
+<iframe id="doc" seamless="seamless"></iframe>
+
+</body>
+
+</html>
+
