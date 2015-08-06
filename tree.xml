@@ -83,6 +83,7 @@
       </branch>
       <branch name="Other">
         <branch link="projects/RoboMouse.jar" name="Robo Mouse" />
+        <branch link="projects/urlrefresher1/refresher-iframe.html" name="Url Refresher iFrame" />
         <branch link="projects/urlrefresher1/refresher.html" name="Url Refresher Single" />
         <branch link="projects/urlrefresher4/refresher.html" name="Url Refresher Quad" />
       </branch>
