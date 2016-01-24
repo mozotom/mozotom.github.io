@@ -1,3 +1,5 @@
+var data = null;
+
 function getParams(url) {
   var params = {};
   var urlSplit = url.split('?');
@@ -28,11 +30,18 @@ function loadJSON(filename, callback) {
 
 function loadfile(filename) {
   loadJSON(filename, function(response) {
-    draw(JSON.parse(response));
+    data = JSON.parse(response);
+    draw();
+
+    var c = document.getElementById("drawing");
+    c.addEventListener('mousemove', function(e) {
+      draw(getMousePos(c, e));
+    }, false);
+
   });
 }
 
-function draw(data) {
+function draw(mousePos) {
   var c = document.getElementById("drawing");
   var ctx = c.getContext("2d");
 
@@ -48,9 +57,19 @@ function draw(data) {
   c.width = size[0] * scale[0];
   c.height = size[1] * scale[0];
   
+  var minDist = Number.MAX_VALUE;
+  var minPoint = null;
+  
   var P = {}
   for (var i in points) {
     P[i] = [(shift[0] + points[i][0]) * scale[0], c.height - (shift[1] + points[i][1]) * scale[1]];
+    if (mousePos) {
+      var d = distance([mousePos.x, mousePos.y], P[i]);
+      if (d < minDist) {
+        minDist = d;
+        minPoint = i;
+      }
+    }
   }
   
   for (var i in lines) {
@@ -146,8 +165,23 @@ function draw(data) {
     ctx.stroke();
   }
 
+  if (minDist < 50) {
+    ctx.font = '36pt Times New Roman';
+    ctx.fillStyle = 'red';
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(minPoint, P[minPoint][0], P[minPoint][1]);
+  }
 }
 
 function distance(A, B) {
   return Math.round(Math.sqrt((A[0] - B[0]) * (A[0] - B[0]) + (A[1] - B[1]) * (A[1] - B[1])) * 100) / 100;
+}
+
+function getMousePos(c, e) {
+  var rect = c.getBoundingClientRect();
+  return {
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top
+  };
 }
