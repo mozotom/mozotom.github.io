@@ -42,6 +42,7 @@ function draw(data) {
   var font = data.font;
   var points = data.points;
   var lines = data.lines;
+  var arcs = data.arcs;
   var measures = data.measures;
   
   c.width = size[0] * scale[0];
@@ -57,13 +58,36 @@ function draw(data) {
     var A = P[line[0]];
     var B = P[line[1]];
     var color = line[2];
-    var weight = line[3];
+    var lineWidth = line[3];
     
     ctx.beginPath();
-    ctx.lineWidth = weight;
+    ctx.lineWidth = lineWidth;
     ctx.strokeStyle = color;
     ctx.moveTo(A[0], A[1]);
     ctx.lineTo(B[0], B[1]);
+    ctx.stroke();
+  }
+
+  for (var i in arcs) {
+    var arc = arcs[i];
+    var A = P[arc[0]];
+    var rX = arc[1] * scale[0];
+    var rY = arc[2] * scale[1];
+    var a0 = arc[3] * Math.PI / 180;
+    var a1 = arc[4] * Math.PI / 180;
+    var angle = arc[5] * Math.PI / 180;
+    var color = arc[6];
+    var lineWidth = arc[7];
+    
+    ctx.save();
+    ctx.beginPath();
+    ctx.translate(A[0], A[1]);
+    ctx.rotate(angle);
+    ctx.scale(rX, rY);
+    ctx.arc(0, 0, 1, a0, a1);
+    ctx.restore();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lineWidth;
     ctx.stroke();
   }
 
@@ -72,11 +96,11 @@ function draw(data) {
     var A = P[measure[0]];
     var B = P[measure[1]];
     var color = measure[2];
-    var weight = measure[3];
+    var lineWidth = measure[3];
     var offsetX = measure[4] * scale[0];
     var offsetY = measure[5] * scale[1];
-    var C = [A[0] + offsetX, A[1] - offsetY];
-    var D = [B[0] + offsetX, B[1] - offsetY];
+    var C = [A[0] + offsetX * 3 / 4, A[1] - offsetY * 3 / 4];
+    var D = [B[0] + offsetX * 3 / 4, B[1] - offsetY * 3 / 4];
     var C2 = [A[0] + offsetX / 2, A[1] - offsetY / 2];
     var D2 = [B[0] + offsetX / 2, B[1] - offsetY / 2];
     var T = [(C2[0] + D2[0]) / 2, (C2[1] + D2[1]) / 2];
@@ -107,7 +131,7 @@ function draw(data) {
     var drawPart = drawLen / lineLen;
     
     ctx.beginPath();
-    ctx.lineWidth = weight;
+    ctx.lineWidth = lineWidth;
     ctx.strokeStyle = color;
     if (drawPart > 0) {
       ctx.moveTo(C2[0], C2[1]);
@@ -121,6 +145,7 @@ function draw(data) {
     ctx.lineTo(D[0], D[1]);
     ctx.stroke();
   }
+
 }
 
 function distance(A, B) {
