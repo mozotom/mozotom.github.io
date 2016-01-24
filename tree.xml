@@ -48,6 +48,8 @@
         <branch link="projects/MosaicMaker.zip" name="Hex Mosaic Maker" />
         <branch link="projects/color.test.zip" name="Monitor Test" />
         <branch link="projects/ScreenTest/ScreenTest.html" name="Screen Test" target="_blank" />
+        <branch link="projects/Drawing/drawing.html?q=sample.json" name="Drawing Sample" target="_blank" />
+        <branch link="projects/Drawing/drawing.html?q=MasterBath.json" name="Drawing Master Bath" target="_blank" />
       </branch>
       <branch name="Games">
         <branch link="projects/SlideGame.jar" name="Slide Game" />
