@@ -1,3 +1,19 @@
+function getParams(url) {
+  var params = {};
+  var urlSplit = url.split('?');
+  if (urlSplit.length <= 1) return params;
+  var nameValues = urlSplit[1].split('&');
+  
+  for (var i in nameValues) {
+    var data = nameValues[i].split('=');
+    params[unescape(data[0])] = unescape(data[1]);
+  }
+  
+  return params;
+}
+
+var params = getParams(window.location.href);
+
 function loadJSON(filename, callback) {   
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
