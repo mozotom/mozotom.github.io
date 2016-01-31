@@ -41,6 +41,22 @@ function loadfile(filename) {
   });
 }
 
+function getCoordinate(points, point, index) {
+  var result = point[index];
+  if ((isNaN(result)) && (result !== undefined)) {
+    var expr = result.split(/[\s\+\-\*\/]+/);
+    for (var i=0; i<expr.length; ++i) {
+      if (isNaN(expr[i])) {
+        result = result.replace(expr[i], getCoordinate(points, points[expr[i]], index));
+      }
+    }
+    
+    result = eval(result);
+    point[index] = result;
+  }
+  return result;
+}
+
 function draw(mousePos) {
   var c = document.getElementById("drawing");
   var ctx = c.getContext("2d");
@@ -62,7 +78,7 @@ function draw(mousePos) {
   
   var P = {}
   for (var i in points) {
-    P[i] = [(shift[0] + points[i][0]) * scale[0], c.height - (shift[1] + points[i][1]) * scale[1]];
+    P[i] = [(shift[0] + getCoordinate(points, points[i], 0)) * scale[0], c.height - (shift[1] + getCoordinate(points, points[i], 1)) * scale[1]];
     if (mousePos) {
       var d = distance([mousePos.x, mousePos.y], P[i]);
       if (d < minDist) {
