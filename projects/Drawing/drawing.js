@@ -1,4 +1,5 @@
 var data = null;
+var showAlerts = true;
 
 function getParams(url) {
   var params = {};
@@ -41,13 +42,31 @@ function loadfile(filename) {
   });
 }
 
-function getCoordinate(points, point, index) {
+function getCoordinate(points, point, index, stack) {
+  if (stack === undefined) {
+    stack = {};
+  }
+
+  if (stack[point[index]] !== undefined) {
+    if (showAlerts) alert("Circular reference found on: " + JSON.stringify(Object.keys(stack)));
+    showAlerts = false;
+    return null;
+  }
+
+  stack[point[index]] = true;
   var result = point[index];
   if ((isNaN(result)) && (result !== undefined)) {
-    var expr = result.split(/[\s\+\-\*\/]+/);
+    var expr = result.split(/[\(\)\s\+\-\*\/]+/);
     for (var i=0; i<expr.length; ++i) {
       if (isNaN(expr[i])) {
-        result = result.replace(expr[i], getCoordinate(points, points[expr[i]], index));
+        var newPoint = points[expr[i]];
+        if (newPoint === undefined) {
+          if (showAlerts) alert("Could not find definition of : " + expr[i]);
+          showAlerts = false;
+          return null;
+        }
+
+        result = result.replace(new RegExp("\\b" + expr[i] + "\\b"), getCoordinate(points, newPoint, index, stack));
       }
     }
     
@@ -60,7 +79,7 @@ function getCoordinate(points, point, index) {
 function draw(mousePos) {
   var c = document.getElementById("drawing");
   var ctx = c.getContext("2d");
-
+ 
   var size = data.size;
   var scale = data.scale;
   var shift = data.shift;
@@ -78,7 +97,18 @@ function draw(mousePos) {
   
   var P = {}
   for (var i in points) {
-    P[i] = [(shift[0] + getCoordinate(points, points[i], 0)) * scale[0], c.height - (shift[1] + getCoordinate(points, points[i], 1)) * scale[1]];
+    var x = getCoordinate(points, points[i], 0);
+    if (x == null) {
+      if (showAlerts) alert("Unable to determine X coordinate of " + i);
+      showAlerts = false;
+    }
+    var y = getCoordinate(points, points[i], 1);
+    if (y == null) {
+      if (showAlerts) alert("Unable to determine Y coordinate of " + i);
+      showAlerts = false;
+    }
+    
+    P[i] = [(shift[0] + x) * scale[0], c.height - (shift[1] + y) * scale[1]];
     if (mousePos) {
       var d = distance([mousePos.x, mousePos.y], P[i]);
       if (d < minDist) {
