@@ -25,7 +25,13 @@
     "ShowerWallRightBottom": [91.25, 0],
     "ShowerWallLeftTop": [86.5, 38.75],
     "ShowerWallRightTop": [91.25, 38.75],
-    "ShowerRightWallTop": [138.25, 38.75],
+    "ShowerRightWallTop": ["ShowerWallRightTop + 20", 38.75],
+    "ShowerDoorHinge": ["RightBottomCorner", "ShowerWallRightTop"],
+    "ShowerRainHead": ["ShowerWallRightTop + 18.25", "(ShowerWallRightTop + ShowerWallRightBottom) / 2"],
+    "ShowerBarRT": ["ShowerRainHead", "ShowerRainHead + 0.5"],
+    "ShowerBarRB": ["ShowerRainHead", "ShowerRainHead - 0.5"],
+    "ShowerBarLT": ["ShowerWallRightTop", "ShowerRainHead + 0.5"],
+    "ShowerBarLB": ["ShowerWallRightTop", "ShowerRainHead - 0.5"],
     "BathTubShelfRightTop": ["BathTubRightTop", "RightTopCorner"],
     "BathTubCenter": ["(BathTubLeftBottom + BathTubRightTop) / 2", "(BathTubLeftBottom + BathTubRightTop) / 2"],
     "BathTubShelfRightBottom": ["BathTubRightBottom", "LeftBottomCorner"],
@@ -53,7 +59,7 @@
     ["BathTubLeftBottom", "BathTubRightBottom", "black", 6],
     ["BathTubLeftTop", "BathTubLeftBottom", "black", 2],
     ["BathTubRightTop", "BathTubLeftTop", "black", 6],
-    ["BathTubRightBottom", "BathTubRightTop", "black", 2],
+    ["BathTubRightBottom", "BathTubRightTop", "black", 6],
     ["DoorTrimLeft", "DoorLeft", "black", 6],
     ["OpenDoor", "DoorRight", "black", 6],
     ["DoorRight", "DoorTrimRight", "black", 6],
@@ -64,6 +70,8 @@
     ["ShowerWallLeftTop", "ShowerWallRightTop", "black", 6],
     ["ShowerWallRightTop", "ShowerWallRightBottom", "black", 6],
     ["ShowerWallRightTop", "ShowerRightWallTop", "black", 2],
+    ["ShowerBarLT", "ShowerBarRT", "black", 2],
+    ["ShowerBarLB", "ShowerBarRB", "black", 2],
     ["RightTopCorner", "RightBottomCorner", "black", 6],
     ["LeftTopCorner", "BathTubShelfRightTop", "black", 6],
     ["BathTubShelfRightTop", "SinkRightTop", "black", 6],
@@ -89,7 +97,9 @@
     ["TubFaucetControl", 1.1875, 1.1875, 0, 360, 0, "black", 2],
     ["TubFaucetSpout", 0.625, 0.625, 0, 360, 0, "black", 2],
     ["TubFaucetHandle", 0.875, 0.875, 0, 360, 0, "black", 2],
-    ["TubDrain", 0.875, 0.875, 0, 360, 0, "black", 2]
+    ["TubDrain", 0.875, 0.875, 0, 360, 0, "black", 2],
+    ["ShowerDoorHinge", 27, 27, 90, 270, 0, "black", 2],
+    ["ShowerRainHead", 4.75, 4.75, 0, 360, 0, "black", 2]
   ],
   "measures": [
     ["LeftBottomCorner", "WindowBottom", "black", 2, -3, 0],
@@ -112,6 +122,9 @@
     ["BathTubShelfRightTop", "SinkRightTop", "black", 2, 0, 3],
     ["SinkRightTop", "RightTopCorner", "black", 2, 0, 3],
     ["BathTubShelfRightTop", "SinkLeftBottom", "black", 2, 3, 0],
-    ["ShowerWallLeftTop", "SW1", "black", 2, 4.75, 0]
+    ["ShowerWallLeftTop", "SW1", "black", 2, 4.75, 0],
+    ["ShowerWallRightTop", "ShowerRightWallTop", "black", 2, 0, 3],
+    ["ShowerDoorHinge", "ShowerRightWallTop", "black", 2, 0, 0]
+    
   ]
 }
