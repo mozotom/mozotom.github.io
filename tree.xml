@@ -60,7 +60,7 @@
         <branch link="projects/School/Math.xlsm" name="Math - Add Sub Mult Div 0-9" />
         <branch link="projects/Typing/typing.html" name="Typing Words" />
         <branch link="projects/TypingLetters/typing.html" name="Typing Letters" />
-        <branch link="http://10fastfingers.com/text/573-the-quick-brown-fox-jumped-over-the-lazy-dog" name="Typing Alphabet" />
+        <branch link="http://10fastfingers.com/text/61065-the-quick-brown-fox-jumps-over-the-lazy-dog" name="Typing Alphabet" />
       </branch>
       <branch name="Web code examples">
         <branch link="projects/pivot-table/pivot-table.xml" name="Pivot Table" />
