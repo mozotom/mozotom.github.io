@@ -1,0 +1,226 @@
+{ 
+  "size": [250, 450],
+  "scale": [5, 5],
+  "shift": [40, 5],
+  "font": "10px Arial",
+  "points": {
+    "LeftBottomCorner": [0, 0],
+    "LeftTopCorner": ["LeftBottomCorner", "RightTopCorner"],
+    "LTC1": ["LeftTopCorner", "LeftTopCorner + 1.5"],
+    "RightTopCorner": ["LeftBottomCorner + 198", "LeftBottomCorner + 413"],
+    "RTC1": ["RightTopCorner", "LTC1"],
+    "RightBottomCorner": ["RightTopCorner", "LeftBottomCorner"],
+    
+    "StaffDoorBottom": ["LeftBottomCorner", "LeftBottomCorner + 173"],
+    "StaffDoorTop": ["LeftBottomCorner", "StaffDoorBottom + 32"],
+    "OpenStaffDoor": ["StaffDoorBottom - 32", "StaffDoorBottom"],
+    
+    "BathRoomLeftTop": ["LeftBottomCorner", "LeftBottomCorner + 89.5"],
+    "DoorBathRoomLeft": [3.5, "BathRoomLeftTop"],
+    "DoorBathRoomRight": ["DoorBathRoomLeft + 36", "BathRoomLeftTop"],
+    "OpenBathRoomDoor": ["DoorBathRoomLeft", "DoorBathRoomLeft - 36"],
+    "BathRoomRightTop": ["LeftBottomCorner + 74", "BathRoomLeftTop"],
+    "BathRoomRightBottom": ["LeftBottomCorner + 74", "LeftBottomCorner"],
+    
+    "SinkRoomLeftTop": ["RightBottomCorner - 117.5", "SinkRoomRightTop"],
+    "DoorSinkRoomLeft": ["RightBottomCorner - 40", "SinkRoomLeftTop"],
+    "DoorSinkRoomRight": ["RightBottomCorner - 4", "SinkRoomLeftTop"],
+    "SinkRoomRightTop": ["RightBottomCorner", "RightBottomCorner + 89.5"],
+    "SinkRoomLeftBottom": ["SinkRoomLeftTop", "LeftBottomCorner"],
+    
+    "MainRoomLeftBottom": ["LeftBottomCorner", "LeftBottomCorner + 89.5 + 6.5"],
+    "MainDoorBathRoomLeft": [3.5, "MainRoomLeftBottom"],
+    "MainDoorBathRoomRight": ["MainDoorBathRoomLeft + 36", "MainRoomLeftBottom"],
+    "MainDoorSinkRoomLeft": ["MainDoorSinkRoomRight - 36", "MainDoorSinkRoomRight"],
+    "MainDoorSinkRoomRight": ["MainRoomRightBottom - 4", "MainRoomRightBottom"],
+    "MainRoomRightBottom": ["RightBottomCorner", "MainRoomLeftBottom"],
+    "OpenSinkRoomDoor": ["MainDoorSinkRoomLeft", "MainDoorSinkRoomLeft + 36"],
+    
+    "LeftTopGlassPanel": [38, "LeftTopCorner"],
+    "FrenchDoorLeft": ["LeftTopGlassPanel + 32", "LeftTopCorner"],
+    "FrenchDoorMiddle": ["FrenchDoorLeft + 28", "LeftTopCorner"],
+    "FrenchDoorRight": ["FrenchDoorMiddle + 28", "LeftTopCorner"],
+    "RightTopGlassPanel": ["FrenchDoorRight + 32", "LeftTopCorner"],
+    "OpenLeftFrenchDoor": ["FrenchDoorLeft", "FrenchDoorLeft - 28"],
+    "OpenRightFrenchDoor": ["FrenchDoorRight", "FrenchDoorRight - 28"],
+    
+    "LeftBottomChemney": ["RightBottomChemney - 25", "RightBottomChemney"],
+    "LeftTopChemney": ["LeftBottomChemney", "LeftBottomChemney + 24"],
+    "RightBottomChemney": ["MainRoomRightBottom - 86.5", "MainRoomRightBottom"],
+    "RightTopChemney": ["RightBottomChemney", "RightBottomChemney + 24"],
+    
+    "LeftBottomPlatform": ["RightBottomPlatform - 45", "RightBottomPlatform"],
+    "LeftTopPlatform": ["LeftBottomPlatform", "LeftBottomPlatform + 45"],
+    "RightBottomPlatform": ["MainRoomRightBottom - 76", "MainRoomRightBottom + 24"],
+    "RightTopPlatform": ["RightBottomPlatform", "RightBottomPlatform + 45"],
+    
+    "LeftBottomPanel": ["LeftTopPanel", "LeftTopPanel - 15"],
+    "LeftTopPanel": ["LeftTopCorner", "LeftTopCorner - 24"],
+    "RightBottomPanel": ["LeftBottomPanel + 4", "LeftBottomPanel"],
+    "RightTopPanel": ["LeftTopPanel + 4", "LeftTopPanel"],
+    
+    "SewerCenter": ["BathRoomLeftTop + 24", "BathRoomLeftTop - 24"],
+    
+    "SinkLeftTop": ["BathRoomRightTop - 22", "BathRoomRightTop"],
+    "SinkLeftBottom": ["SinkLeftTop", "SinkLeftTop - 48"],
+    "SinkRightBottom": ["BathRoomRightTop", "SinkLeftBottom"],
+    "SinkCenter": ["(SinkLeftBottom + BathRoomRightTop) / 2", "(SinkLeftBottom + BathRoomRightTop) / 2"],
+    
+    "ToiletBowlCenter": ["BathRoomRightBottom - 23", "(SinkRightBottom + BathRoomRightBottom) / 2"],
+    "ToiletTankLeftTop": ["ToiletBowlCenter + 15 + 4.5", "ToiletBowlCenter - 9"],
+    "ToiletTankRightTop": ["ToiletBowlCenter + 15 + 4.5", "ToiletBowlCenter + 9"],
+    "ToiletTankLeftBottom": ["ToiletBowlCenter + 15 - 4.5", "ToiletBowlCenter - 9"],
+    "ToiletTankRightBottom": ["ToiletBowlCenter + 15 - 4.5", "ToiletBowlCenter + 9"],
+    
+    "LeftTopMop": ["SinkRoomLeftBottom", "SinkRoomLeftBottom + 25"],
+    "RightBottomMop": ["SinkRoomLeftBottom + 21", "SinkRoomLeftBottom"],
+    "RightTopMop": ["RightBottomMop", "LeftTopMop"],
+    
+    "HandSinkLeftTop": ["HandSinkRightTop - 12", "HandSinkRightTop"],
+    "HandSinkLeftBottom": ["HandSinkLeftTop", "HandSinkLeftTop - 16"],
+    "HandSinkRightTop": ["DoorSinkRoomLeft - 5", "DoorSinkRoomLeft"],
+    "HandSinkRightBottom": ["HandSinkRightTop", "HandSinkLeftBottom"],
+    
+    "CornerSinkLeftBottom": ["SinkRoomLeftTop", "SinkRoomLeftTop - 54"],
+    "CornerSinkRightTop": ["SinkRoomLeftTop + 54", "SinkRoomLeftTop"],
+    "CornerdSinkRightLowerBottom": ["CornerSinkLeftBottom + 21", "CornerSinkLeftBottom"],
+    "CornerdSinkRightHigherBottom": ["CornerSinkRightTop", "CornerSinkRightTop - 21"],
+    "CornerSinkMiddle": ["CornerdSinkRightLowerBottom", "CornerdSinkRightHigherBottom"]
+  },
+  
+  
+  
+  "lines": [
+    ["LeftBottomCorner", "StaffDoorBottom", "black", 6],
+    ["StaffDoorBottom", "StaffDoorTop", "black", 2],
+    ["StaffDoorTop", "LeftTopCorner", "black", 6],
+    
+    ["LeftBottomCorner", "RightBottomCorner", "black", 6],
+    
+    ["RightTopCorner", "RightBottomCorner", "black", 6],
+    
+    ["LeftTopCorner", "LeftTopGlassPanel", "black", 6],
+    ["LeftTopGlassPanel", "FrenchDoorLeft", "black", 2],
+    ["FrenchDoorLeft", "FrenchDoorMiddle", "black", 2],
+    ["FrenchDoorMiddle", "FrenchDoorRight", "black", 2],
+    ["FrenchDoorRight", "RightTopGlassPanel", "black", 2],
+    ["RightTopGlassPanel", "RightTopCorner", "black", 6],
+    
+    ["BathRoomLeftTop", "DoorBathRoomLeft", "black", 6],
+    ["DoorBathRoomLeft", "DoorBathRoomRight", "black", 2],
+    ["DoorBathRoomRight", "BathRoomRightTop", "black", 6],
+    ["BathRoomRightTop", "SinkRoomLeftTop", "black", 6],
+    ["SinkRoomLeftTop", "DoorSinkRoomLeft", "black", 6],
+    ["DoorSinkRoomRight", "SinkRoomRightTop", "black", 6], 
+
+    ["MainRoomLeftBottom", "MainDoorBathRoomLeft", "black", 6],
+    ["MainDoorBathRoomRight", "MainDoorSinkRoomLeft", "black", 6],
+    ["MainDoorSinkRoomLeft", "MainDoorSinkRoomRight", "black", 2],
+    ["MainDoorSinkRoomRight", "MainRoomRightBottom", "black", 6],
+
+    ["BathRoomRightTop", "BathRoomRightBottom", "black", 6], 
+    ["SinkRoomLeftTop", "SinkRoomLeftBottom", "black", 6],
+    
+    ["DoorBathRoomLeft", "MainDoorBathRoomLeft", "black", 6],
+    ["DoorBathRoomRight", "MainDoorBathRoomRight", "black", 6],
+    ["DoorSinkRoomLeft", "MainDoorSinkRoomLeft", "black", 6],
+    ["DoorSinkRoomRight", "MainDoorSinkRoomRight", "black", 6],
+    
+    ["OpenStaffDoor", "StaffDoorBottom", "black", 6],
+    ["OpenBathRoomDoor", "DoorBathRoomLeft", "black", 6],
+    ["OpenSinkRoomDoor", "MainDoorSinkRoomLeft", "black", 6],
+    ["OpenLeftFrenchDoor", "FrenchDoorLeft", "black", 6],
+    ["OpenRightFrenchDoor", "FrenchDoorRight", "black", 6],
+    
+    ["LeftBottomChemney", "LeftTopChemney", "black", 6],
+    ["LeftTopChemney", "RightTopChemney", "black", 6],
+    ["RightTopChemney", "RightBottomChemney", "black", 6],
+    
+    ["LeftBottomPlatform", "LeftTopPlatform", "black", 2],
+    ["LeftTopPlatform", "RightTopPlatform", "black", 2],
+    ["RightTopPlatform", "RightBottomPlatform", "black", 2],
+    ["RightBottomPlatform", "LeftBottomPlatform", "black", 2],
+    
+    ["LeftTopPanel", "RightTopPanel", "black", 2],
+    ["RightTopPanel", "RightBottomPanel", "black", 2],
+    ["RightBottomPanel", "LeftBottomPanel", "black", 2],
+    
+    ["SinkLeftTop", "SinkLeftBottom", "black", 2],
+    ["SinkLeftBottom", "SinkRightBottom", "black", 2],
+    
+    ["ToiletTankLeftTop", "ToiletTankRightTop", "black", 2],
+    ["ToiletTankLeftBottom", "ToiletTankRightBottom", "black", 2],
+    ["ToiletTankLeftTop", "ToiletTankLeftBottom", "black", 2],
+    ["ToiletTankRightTop", "ToiletTankRightBottom", "black", 2],
+    
+    ["LeftTopMop", "RightTopMop", "black", 2],
+    ["RightTopMop", "RightBottomMop", "black", 2],
+    
+    ["HandSinkLeftTop", "HandSinkLeftBottom", "black", 2],
+    ["HandSinkLeftBottom", "HandSinkRightBottom", "black", 2],
+    ["HandSinkRightBottom", "HandSinkRightTop", "black", 2],
+    
+    ["CornerSinkLeftBottom", "CornerdSinkRightLowerBottom", "black", 2],
+    ["CornerdSinkRightLowerBottom", "CornerSinkMiddle", "black", 2],
+    ["CornerSinkMiddle", "CornerdSinkRightHigherBottom", "black", 2],
+    ["CornerdSinkRightHigherBottom", "CornerSinkRightTop", "black", 2]
+    
+  ],
+  
+    
+  "arcs": [
+    ["FrenchDoorLeft", 28, 28, 0, 90, 0, "black", 2],
+    ["FrenchDoorRight", 28, 28, 90, 180, 0, "black", 2],
+    ["StaffDoorBottom", 32, 32, 180, 270, 0, "black", 2],
+    ["DoorBathRoomLeft", 36, 36, 0, 90, 0, "black", 2],
+    ["MainDoorSinkRoomLeft", 36, 36, 270, 0, 0, "black", 2],
+    ["SewerCenter", 3, 3, 0, 360, 0, "black", 2],
+    ["SinkCenter", 6, 8.5, 0, 360, 0, "black", 2],
+    ["ToiletBowlCenter", 10, 7, 0, 360, 0, "black", 2]
+
+  ],
+  
+  
+  "measures": [
+    ["LeftBottomCorner", "StaffDoorBottom", "black", 2, -3, 0],
+    ["StaffDoorBottom", "StaffDoorTop", "black", 2, -3, 0],
+    ["StaffDoorTop", "LeftTopCorner", "black", 2, -3, 0],
+    
+    ["LTC1", "RTC1", "black", 2, 0, 3],
+    
+    ["LeftBottomCorner", "RightBottomCorner", "black", 2, 0, -3],
+    
+    ["RightTopCorner", "RightBottomCorner", "black", 2, 3, 0],
+    
+    ["LeftTopCorner", "LeftTopGlassPanel", "black", 2, 0, 3],
+    ["LeftTopGlassPanel", "FrenchDoorLeft", "black", 2, 0, 3],
+    ["FrenchDoorLeft", "FrenchDoorMiddle", "black", 2, 0, 3],
+    ["FrenchDoorMiddle", "FrenchDoorRight", "black", 2, 0, 3],
+    ["FrenchDoorRight", "RightTopGlassPanel", "black", 2, 0, 3],
+    ["RightTopGlassPanel", "RightTopCorner", "black", 2, 0, 3],
+    
+    ["BathRoomLeftTop", "DoorBathRoomLeft", "black", 2, 0, 6],
+    ["DoorBathRoomLeft", "DoorBathRoomRight", "black", 2, 0, 6],
+    ["DoorBathRoomRight", "BathRoomRightTop", "black", 2, 0, 6],
+    ["BathRoomRightTop", "SinkRoomLeftTop", "black", 2, 0, 6],
+    ["SinkRoomLeftTop", "DoorSinkRoomLeft", "black", 2, 0, 6],
+    ["DoorSinkRoomLeft", "DoorSinkRoomRight", "black", 2, 0, 6],
+    ["DoorSinkRoomRight", "SinkRoomRightTop", "black", 2, 0, 6],
+    
+    ["LeftBottomChemney", "LeftTopChemney", "black", 2, 3, 0],
+    ["LeftTopChemney", "RightTopChemney", "black", 2, 0, -3],
+    
+    ["LeftBottomPlatform", "LeftTopPlatform", "black", 2, 3, 0],
+    ["LeftTopPlatform", "RightTopPlatform", "black", 2, 0, -3],
+    
+    ["SinkRoomLeftBottom", "LeftTopMop", "black", 2, 3, 0],
+    ["LeftTopMop", "RightTopMop", "black", 2, 0, -3],
+    
+    ["HandSinkLeftBottom", "HandSinkLeftTop", "black", 2, 3, 0],
+    ["HandSinkLeftTop", "HandSinkRightTop", "black", 2, 0, -3],
+    
+    ["CornerSinkLeftBottom", "SinkRoomLeftTop", "black", 2, 3, 0],
+    ["SinkRoomLeftTop", "CornerSinkRightTop", "black", 2, 0, -3]
+    
+  ]
+}
