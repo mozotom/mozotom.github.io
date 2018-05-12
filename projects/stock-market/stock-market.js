@@ -2,7 +2,7 @@ function _(id) {
   return document.getElementById(id);
 }
 
-function getText(url) {
+function load(url, f) {
     var request = new XMLHttpRequest();
     request.open('GET', url, true);
     request.send(null);
@@ -10,12 +10,12 @@ function getText(url) {
         if (request.readyState === 4 && request.status === 200) {
             var type = request.getResponseHeader('Content-Type');
             if (type.indexOf("text") !== 1) {
-                return request.responseText;
+                f(request.responseText);
             }
         }
     }
 }
 
 function init() {
-  _("result").innerText = getText("sp500.csv");
+  load("sp500.csv", v => { _("result").innerText = v; });
 }
