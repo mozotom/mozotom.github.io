@@ -1,3 +1,6 @@
+var dataUrl = "http://mozotom.github.io/projects/stock-market/sp500.csv";
+//var dataUrl = "sp500.csv";
+
 function _(id) {
   return document.getElementById(id);
 }
@@ -17,5 +20,5 @@ function load(url, f) {
 }
 
 function init() {
-  load("sp500.csv", v => { _("result").innerText = v; });
+  load(dataUrl, v => { _("result").innerText = v; });
 }
