@@ -2,6 +2,7 @@
 var dataUrl = 'http://mozotom.github.io/projects/stock-market/sp500.csv';
 //var dataUrl = 'sp500.csv';
 var data;
+var dataName = "S&P 500";
 var timeframeMonths = [12, 36, 60, 84, 120, 180, 240, 360];
 var percentiles = [.01, .05, .10, .20, .25, .50, .75, .80, .90, .95, .99];
 var percentiles = getSequence(0.05, .96, 0.05);
@@ -68,7 +69,7 @@ function runSim(data, timeframeMonths) {
 }
 
 function createHeader(startDate, endDate, span) {
-  return '<tr><td class="title" colspan="' + span + '">Stock market performance from ' + startDate + ' to ' + endDate + ' monthly</td></tr>';
+  return '<tr><td class="title" colspan="' + span + '">' + dataName + ' annualized average return from ' + startDate + ' to ' + endDate + ' monthly</td></tr>';
 }
 
 function createDistributionTable(timeframeMonths, vals, probabilities, startDate, endDate) {
@@ -90,9 +91,9 @@ function createDistributionTable(timeframeMonths, vals, probabilities, startDate
   }
 
   r += '<tr>';
-  r += '<th>Data size</th>';
+  r += '<th class="datasize">Data size</th>';
   for (var i in timeframeMonths) {
-    r += '<td class="value">' + vals[i].length + '</td>';
+    r += '<td class="value datasize">' + vals[i].length + '</td>';
   }
   r += '</tr>';
 
