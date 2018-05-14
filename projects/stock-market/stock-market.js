@@ -75,6 +75,7 @@ function runSim(data, timeframeMonths) {
 	apy[k] = [];
     for (var i = 0; i < stockValues.length - timeframeMonths[k]; ++i) {
 	  apy[k][i] = calcAPY(timeframeMonths[k], calcFinalValueFromStock(stockValues.slice(i, i + timeframeMonths[k])));
+	  console.log('Months: ' + timeframeMonths[k] + ' Start Price: ' + stockValues[i] + ' End Price: ' + stockValues[i + timeframeMonths[k] - 1] + ' APY: ' + apy[k][i]);
     }
     apy[k].sort((a,b) => a - b);
   }
