@@ -39,11 +39,3 @@ table .datasize {
 h2 {
     text-align: center;	
 }
-
-tr:nth-child(even) {
-	background: #DDD
-}
-
-tr:nth-child(odd) {
-	background: #FFF
-}

@@ -1,11 +1,25 @@
+const dataName = "S&P 500";
 // Monthly stock prices from https://query1.finance.yahoo.com/v7/finance/download/%5EGSPC?period1=-630957600&period2=1526101200&interval=1mo&events=history&crumb=nsVSUpVHJuN
-var dataUrl = 'http://mozotom.github.io/projects/stock-market/sp500.csv';
-//var dataUrl = 'sp500.csv';
+const dataUrl = 'http://mozotom.github.io/projects/stock-market/sp500.csv';
+//const dataUrl = 'sp500.csv';
 var data;
-var dataName = "S&P 500";
-var timeframeMonths = [12, 36, 60, 84, 120, 180, 240, 360];
-var percentiles = [.01, .05, .10, .20, .25, .50, .75, .80, .90, .95, .99];
-var percentiles = getSequence(0.05, .96, 0.05);
+
+const timeframeMonths = [12, 36, 60, 84, 120, 180, 240, 360];
+//const percentiles = [.01, .05, .10, .20, .25, .50, .75, .80, .90, .95, .99];
+const percentiles = getSequence(0.05, .96, 0.05);
+//const percentiles = getSequence(0.01, .999, 0.01);
+
+const colorScale = [[255, 31, 31], [255, 255, 223], [31, 255, 31]];
+
+function getApyColor(minAPY, apy, maxAPY) {
+  const p = (apy - minAPY) / (maxAPY - minAPY);
+  const colorIndex = Math.min(Math.floor((colorScale.length - 1) * p), colorScale.length - 2);
+  const pp = (p - colorIndex / (colorScale.length - 1)) * (colorScale.length - 1);
+  return 'rgb(' +
+    Math.floor(colorScale[colorIndex][0] + (colorScale[colorIndex + 1][0] - colorScale[colorIndex][0]) * pp) + ', ' +
+    Math.floor(colorScale[colorIndex][1] + (colorScale[colorIndex + 1][1] - colorScale[colorIndex][1]) * pp) + ', ' +
+    Math.floor(colorScale[colorIndex][2] + (colorScale[colorIndex + 1][2] - colorScale[colorIndex][2]) * pp) + ')';
+}
 
 function getSequence(start, end, step = 1) {
   result = [];
@@ -81,11 +95,34 @@ function createDistributionTable(timeframeMonths, vals, probabilities, startDate
   }
   r += '</tr>';
 
+  const apy = [];
+  var minAPY;
+  var maxAPY;
+  for (var k in probabilities) {
+	apy[k] = [];
+	for (var i in timeframeMonths) {
+	  apy[k][i] = getPercentile(vals[i], probabilities[k]);
+
+	  if (!minAPY || apy[k][i] < minAPY) {
+		minAPY = apy[k][i];
+	  }
+
+	  if (!maxAPY || apy[k][i] > maxAPY) {
+		maxAPY = apy[k][i];
+	  }
+    }
+  }
+
+  if (minAPY * maxAPY < 0) {
+	minAPY = -Math.max(Math.abs(minAPY), maxAPY);
+	maxAPY = Math.max(Math.abs(minAPY), maxAPY);
+  }
+
   for (var k in probabilities) {
 	r += '<tr>';
 	r += '<th class="value">' + (Math.round((probabilities[k] * 100000)) / 1000) + '%</th>';
 	for (var i in timeframeMonths) {
-	  r += '<td class="value">' + (getPercentile(vals[i], probabilities[k]) * 100).toFixed(2) + '%</td>';
+	  r += '<td class="value" style="background: ' + getApyColor(minAPY, apy[k][i], maxAPY) + '">' + (apy[k][i] * 100).toFixed(2) + '%</td>';
 	}
 	r += '</tr>';
   }
