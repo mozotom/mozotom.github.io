@@ -25,6 +25,9 @@
         <branch link="Presentations/Unit%20Testing%202010.pptx" name="Unit Testing 2010" />
         <branch link="Presentations/Java%20Threads%202009.pdf" name="Java Threads 2009" />
       </branch>
+      <branch name="Research">
+        <branch link="projects/stock-market/stock-market.html" name="Stock Market" />
+      </branch>
       <branch name="vCard Contacts">
         <branch link="http://mozotom.50webs.com/projects/ContactsManager/ContactsDupMerge.html" name="Duplicate Merge" />
         <branch link="http://mozotom.50webs.com/projects/ContactsManager/ContactsEditor.html" name="Online Editor" />
