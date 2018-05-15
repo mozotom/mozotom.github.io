@@ -5,9 +5,10 @@ const dataUrl = 'http://mozotom.github.io/projects/stock-market/sp500.csv';
 var data;
 
 const timeframeMonths = [12, 36, 60, 84, 120, 180, 240, 360];
+
 //const percentiles = [.01, .05, .10, .20, .25, .50, .75, .80, .90, .95, .99];
-const percentiles = getSequence(0.05, .96, 0.05);
 //const percentiles = getSequence(0.01, .999, 0.01);
+const percentiles = getSequence(0.05, .96, 0.05);
 
 const colorScale = [[255, 31, 31], [255, 255, 223], [31, 255, 31]];
 
@@ -139,9 +140,10 @@ function createDistributionTable(timeframeMonths, vals, probabilities, startDate
 }
 
 function getPercentile(vals, percentile) {
-  const i = Math.floor(vals.length * percentile);
-  const j = Math.ceil(vals.length * percentile);
-  const k = vals.length * percentile;
+  const maxIndex = (vals.length - 1);
+  const i = Math.floor(maxIndex * percentile);
+  const j = Math.ceil(maxIndex * percentile);
+  const k = maxIndex * percentile;
   return vals[i] + (vals[j] - vals[i]) * (k - i);
 }
 
