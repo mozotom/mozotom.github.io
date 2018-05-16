@@ -1,5 +1,5 @@
 const dataName = "S&P 500";
-// Monthly stock prices from https://query1.finance.yahoo.com/v7/finance/download/%5EGSPC?period1=-630957600&period2=1526101200&interval=1mo&events=history&crumb=nsVSUpVHJuN
+// Monthly stock prices from https://query1.finance.yahoo.com/v7/finance/download/%5EGSPC?period1=-630957600&period2=1526101200&interval=1mo&events=history
 const dataUrl = 'http://mozotom.github.io/projects/stock-market/sp500.csv';
 //const dataUrl = 'sp500.csv';
 var data;
@@ -8,6 +8,8 @@ const timeframeMonths = [12, 36, 60, 84, 120, 180, 240, 360];
 
 //const percentiles = [.01, .05, .10, .20, .25, .50, .75, .80, .90, .95, .99];
 //const percentiles = getSequence(0.01, .999, 0.01);
+//const percentiles = getSequence(0, .9999, 0.001);
+//const percentiles = getSequence(0, 1, 1);
 const percentiles = getSequence(0.05, .96, 0.05);
 
 const colorScale = [[255, 31, 31], [255, 255, 223], [31, 255, 31]];
