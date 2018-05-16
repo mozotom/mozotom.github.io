@@ -156,28 +156,32 @@ function calcFinalValueFromStock(stockValues) {
 }
 
 function calcAPY(timeframeMonths, finalValue) {
-  var minAPY = -.9999;
-  var maxAPY = 100;
-  var minVal = calcFinalValueFromAPY(timeframeMonths, minAPY);
-  var maxVal = calcFinalValueFromAPY(timeframeMonths, maxAPY);
+  var minRate = -.9999;
+  var maxRate = 100;
+  var minVal = calcFinalValueFromRate(timeframeMonths, minRate);
+  var maxVal = calcFinalValueFromRate(timeframeMonths, maxRate);
   var iter = 0;
-  while (Math.abs(maxAPY - minAPY) > 0.000001) {
+  while (Math.abs(maxRate - minRate) > 0.000001) {
 	++iter;
-	var apy = (maxAPY + minAPY) / 2;
-	var val = calcFinalValueFromAPY(timeframeMonths, apy);
+	var rate = (maxRate + minRate) / 2;
+	var val = calcFinalValueFromRate(timeframeMonths, rate);
 	if (val < finalValue) {
-	  minAPY = apy;
+	  minRate = rate;
       minVal = val;
 	} else {
-	  maxAPY = apy
+	  maxRate = rate
       maxVal = val;
 	}
   }
-  return (minAPY + maxAPY) / 2;
+  rate = (minRate + maxRate) / 2;
+  
+  // Rate is compounded monthly
+  const apy = Math.pow(1 + rate / 12, 12) - 1;
+  return apy;
 }
 
-function calcFinalValueFromAPY(timeframeMonths, apy) {
-  const mult = (1 + apy / 12);
+function calcFinalValueFromRate(timeframeMonths, rate) {
+  const mult = (1 + rate / 12);
   var finalValue = 0;
   for (var i=0; i<timeframeMonths; ++i) {
 	finalValue *= mult;
