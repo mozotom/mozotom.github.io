@@ -1,6 +1,6 @@
 const dataName = "S&P 500";
 // Monthly stock prices from https://query1.finance.yahoo.com/v7/finance/download/%5EGSPC?period1=-630957600&period2=1526101200&interval=1mo&events=history
-const dataUrl = 'http://mozotom.github.io/projects/stock-market/sp500.csv';
+const dataUrl = 'https://mozotom.github.io/projects/stock-market/sp500.csv';
 //const dataUrl = 'sp500.csv';
 var data;
 
